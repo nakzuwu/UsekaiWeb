@@ -10,17 +10,18 @@ return new class extends Migration
      * Run the migrations.
      */
     public function up(): void
-    {
-         Schema::create('blogs', function (Blueprint $table) {
-            $table->id();
-            $table->string('title');
-            $table->longText('content'); // Konten bisa mengandung teks, HTML, dsb.
-            $table->json('media')->nullable(); // Opsional, bisa untuk gambar/video/gif/link
-            $table->foreignId('admin_id')->constrained()->onDelete('cascade'); // Admin yang memposting
-            $table->timestamp('posted_at')->nullable(); // Tanggal posting manual
-            $table->timestamps(); // created_at dan updated_at
-        });
-    }
+{
+    Schema::create('blogs', function (Blueprint $table) {
+        $table->id();
+        $table->string('title');
+        $table->longText('content'); // Bisa teks, HTML
+        $table->json('media')->nullable(); // Gambar, video, link, dsb.
+        $table->foreignId('admin_id')->constrained('admins')->onDelete('cascade'); // Pastikan ini mengacu ke tabel `admins`
+        $table->timestamp('posted_at')->nullable(); // Bisa manual atau pakai now()
+        $table->timestamps(); // created_at dan updated_at
+    });
+}
+
 
 
     /**
