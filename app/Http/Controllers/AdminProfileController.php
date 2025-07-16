@@ -9,6 +9,7 @@ class AdminProfileController extends Controller
 {
     public function show()
     {
+        // return dd("tes");
         return view('admin.profile');
     }
 

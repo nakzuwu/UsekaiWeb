@@ -14,42 +14,58 @@
     .logo-float {
       animation: float 3s ease-in-out infinite;
     }
+
+    .glow-border {
+      border: 2px solid #ff3d3d;
+      box-shadow: 0 0 12px #ff3d3d;
+    }
   </style>
 </head>
-<body class="bg-gray-900 text-white min-h-screen flex items-center justify-center">
+<body class="bg-black text-white min-h-screen flex items-center justify-center">
 
-  <div class="w-full max-w-md bg-gray-800 rounded-2xl shadow-xl p-8 space-y-6">
-    <div class="flex flex-col items-center">
-      <img src="{{ asset('images/usekai.png') }}" alt="USEKAI Logo" class="w-20 h-20 logo-float mb-4">
-      <h1 class="text-2xl font-bold text-white">USEKAI Admin Login</h1>
+  <div class="w-full max-w-screen-2xl h-[90vh] flex overflow-hidden rounded-2xl glow-border">
+    <!-- Left Image Area -->
+    <div class="w-full h-auto object-cover rounded-lg transform translate-x--2"
+         style="background-image: url('{{ asset('images/bg-login.png') }}');">
     </div>
 
-    @if(session('error'))
-      <div class="bg-red-600 text-white p-2 rounded text-sm text-center">
-        {{ session('error') }}
-      </div>
-    @endif
-
-    <form action="{{ route('login') }}" method="POST" class="space-y-4">
-      @csrf
-      <div>
-        <label for="username" class="block mb-1 text-sm">Username</label>
-        <input type="text" id="username" name="username" required
-            class="w-full px-4 py-2 rounded-lg bg-gray-700 border border-gray-600 focus:outline-none focus:ring-2 focus:ring-red-400 text-white" />
-      </div>
-      <div>
-        <label for="password" class="block mb-1 text-sm">Password</label>
-        <input type="password" id="password" name="password" required
-          class="w-full px-4 py-2 rounded-lg bg-gray-700 border border-gray-600 focus:outline-none focus:ring-2 focus:ring-red-400 text-white" />
+    <!-- Right Form Area -->
+    <div class="w-1/2 bg-black flex flex-col justify-center px-10 py-12">
+      <div class="flex flex-col items-center mb-8">
+        <img src="{{ asset('images/usekai.png') }}" alt="USEKAI Logo"
+             class="w-40 mx-auto mb-6 logo-float">
+        <h2 class="text-xl font-bold text-white">Login</h2>
       </div>
 
-      <button type="submit"
-        class="w-full py-2 px-4 bg-red-500 hover:bg-red-600 transition rounded-lg font-semibold text-white">
-        Login
-      </button>
-    </form>
+      @if(session('error'))
+        <div class="bg-red-600 text-white p-2 rounded text-sm text-center mb-4">
+          {{ session('error') }}
+        </div>
+      @endif
 
-    <p class="text-center text-sm text-gray-400">© {{ date('Y') }} USEKAI ID</p>
+      <form action="{{ route('login') }}" method="POST" class="space-y-4 w-full">
+        @csrf
+        <div>
+          <label for="username" class="block mb-1 text-sm">Username</label>
+          <input type="text" id="username" name="username" required
+                 class="w-full px-4 py-2 rounded bg-black border border-red-500 text-white focus:ring-2 focus:ring-red-500 outline-none" />
+        </div>
+        <div>
+          <label for="password" class="block mb-1 text-sm">Password</label>
+          <input type="password" id="password" name="password" required
+                 class="w-full px-4 py-2 rounded bg-black border border-red-500 text-white focus:ring-2 focus:ring-red-500 outline-none" />
+        </div>
+
+        <button type="submit"
+                class="w-full py-2 bg-red-500 hover:bg-red-600 transition rounded font-semibold text-white">
+          Login
+        </button>
+      </form>
+
+      <p class="text-center text-sm text-gray-400 mt-6">
+        © {{ date('Y') }} USEKAI ID
+      </p>
+    </div>
   </div>
 
 </body>
