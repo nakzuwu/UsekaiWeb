@@ -5,6 +5,7 @@ use App\Http\Controllers\AdminAuthController;
 use App\Http\Controllers\AdminProfileController;
 use App\Http\Controllers\AdminDashboardController;
 use App\Http\Controllers\Admin\BlogController;
+use App\Http\Controllers\PublicBlogController;
 
 Route::get('/', function () {
     return view('home');
@@ -34,3 +35,6 @@ Route::middleware('auth:admin')->prefix('admin')->group(function () {
 Route::prefix('admin')->name('admin.')->middleware('auth:admin')->group(function () {
     Route::resource('blog', BlogController::class)->except('show');
 });
+
+Route::get('/blog', [PublicBlogController::class, 'index'])->name('blog.index');
+Route::get('/blog/{blog}', [PublicBlogController::class, 'show'])->name('blog.show');

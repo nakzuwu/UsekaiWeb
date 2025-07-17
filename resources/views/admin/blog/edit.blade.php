@@ -14,47 +14,60 @@
         <h1 class="text-2xl font-bold text-white mb-6">Edit Blog Post</h1>
 
         <form action="{{ route('admin.blog.update', $blog->id) }}" method="POST" enctype="multipart/form-data" id="blogForm">
-            @csrf @method('PUT')
+            @csrf
+            @method('PUT')
 
-            <!-- Title -->
+            {{-- Title --}}
             <div class="mb-4">
                 <label class="block text-white mb-1">Title</label>
                 <input type="text" name="title" value="{{ $blog->title }}"
                     class="w-full p-2 rounded bg-[#0A0A0A] text-white border border-[#EF4444]" required>
             </div>
 
-            <!-- Content -->
+            {{-- Content --}}
             <div class="mb-4">
                 <label class="block text-white mb-1">Content</label>
                 <textarea name="content" rows="6" class="w-full p-2 rounded bg-[#0A0A0A] text-white border border-[#EF4444]"
                     required>{{ $blog->content }}</textarea>
             </div>
 
-            <!-- Media Upload -->
+            {{-- Existing Media --}}
+            @if (!empty($blog->media) && is_array($blog->media))
+                <div class="mb-6">
+                    <label class="block text-white mb-2">Existing Media</label>
+                    <div class="flex flex-wrap gap-4">
+                        @foreach ($blog->media as $media)
+                            <div class="relative w-32">
+                                @if (Str::endsWith($media, ['.jpg', '.jpeg', '.png', '.gif']))
+                                    <img src="{{ asset('storage/' . $media) }}" class="w-full h-24 object-cover rounded">
+                                @elseif(Str::endsWith($media, ['.mp4', '.webm', '.mov']))
+                                    <video src="{{ asset('storage/' . $media) }}" controls
+                                        class="w-full h-24 rounded"></video>
+                                @endif
+                                {{-- Optionally add delete checkbox --}}
+                                <div class="mt-1">
+                                    <label class="text-white text-sm flex items-center gap-1">
+                                        <input type="checkbox" name="remove_media[]" value="{{ $media }}">
+                                        <span>Remove</span>
+                                    </label>
+                                </div>
+                            </div>
+                        @endforeach
+                    </div>
+                </div>
+            @endif
+
+            {{-- Upload Media --}}
             <div class="mb-4">
-                <label class="block text-white mb-1">Upload Media (image/video)</label>
-                <input type="file" id="mediaInput" multiple accept="image/*,video/*"
+                <label class="block text-white mb-1">Upload New Media (image/video)</label>
+                <input type="file" id="mediaInput" name="media[]" multiple accept="image/*,video/*"
                     class="text-white block w-full bg-[#0A0A0A] border border-[#EF4444] p-2 rounded">
-                <input type="hidden" name="media_order" id="mediaOrder">
             </div>
 
-            <!-- Preview -->
-            <div id="previewContainer" class="flex flex-wrap gap-4 mb-6">
-                @if (!empty($blog->media) && is_array($blog->media))
-                    @foreach ($blog->media as $index => $media)
-                        <div class="relative w-32">
-                            @if (Str::endsWith($media, ['.jpg', '.jpeg', '.png', '.gif']))
-                                <img src="{{ asset('storage/' . $media) }}" class="w-full h-24 object-cover rounded">
-                            @elseif(Str::endsWith($media, ['.mp4', '.webm', '.mov']))
-                                <video src="{{ asset('storage/' . $media) }}" controls class="w-full h-24 rounded"></video>
-                            @endif
-                            {{-- Optional: Tombol hapus media lama, implementasinya tergantung backend --}}
-                        </div>
-                    @endforeach
-                @endif
-            </div>
+            {{-- Preview of New Media --}}
+            <div id="previewContainer" class="flex flex-wrap gap-4 mb-6"></div>
 
-            <!-- Submit -->
+            {{-- Submit --}}
             <button type="submit" class="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-lg transition">
                 Update
             </button>

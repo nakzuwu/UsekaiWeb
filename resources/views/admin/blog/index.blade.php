@@ -11,12 +11,6 @@
             </a>
         </div>
 
-        {{-- @if (session('success'))
-            <div class="bg-green-600 text-white px-4 py-2 rounded mb-4">
-                {{ session('success') }}
-            </div>
-        @endif --}}
-
         <div class="space-y-4">
             @forelse($blogs as $blog)
                 <div class="p-4 bg-gray-900 rounded-lg shadow">

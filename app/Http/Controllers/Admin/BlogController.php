@@ -58,21 +58,31 @@ class BlogController extends Controller
         $validated = $request->validate([
             'title' => 'required|string|max:255',
             'content' => 'required|string',
-            'media' => 'nullable|array',
+            'media.*' => 'nullable|file|mimes:jpeg,jpg,png,gif,mp4,webm,mov|max:20480',
         ]);
+
+        $mediaPaths = $blog->media ?? [];
+
+        if ($request->hasFile('media')) {
+            foreach ($request->file('media') as $file) {
+                $mediaPaths[] = $file->store('uploads', 'public');
+            }
+        }
 
         $blog->update([
             'title' => $validated['title'],
             'content' => $validated['content'],
-            'media' => json_encode($validated['media'] ?? []),
+            'media' => $mediaPaths,
         ]);
 
         return redirect()->route('admin.blog.index')->with('success', 'Post updated successfully.');
     }
+
 
     public function destroy(Blog $blog)
     {
         $blog->delete();
         return redirect()->route('admin.blog.index')->with('success', 'Post deleted.');
     }
+    
 }
