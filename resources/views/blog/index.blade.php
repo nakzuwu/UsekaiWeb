@@ -216,14 +216,5 @@
 
         </div>
 
-        <!-- Footer -->
-        <footer class="footer-bar hide-on-hover">
-            <div class="footer-nav">
-                <button>BLOG</button>
-                <button>TALENT</button>
-                <button id="social-toggle">ABOUT</button>
-            </div>
-        </footer>
-
     </div>
 @endsection

@@ -5,7 +5,6 @@
 @section('content')
 
     <div class="flex-1 bg-[#0A0A0A] rounded-xl glow-border p-6 space-y-6">
-        {{-- Header --}}
         <section>
             <h3 class="text-lg font-semibold mb-2">Welcome back, Admin!</h3>
             <p class="text-gray-400">This is your dashboard. Use the sidebar to navigate.</p>

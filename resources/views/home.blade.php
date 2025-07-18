@@ -32,11 +32,6 @@
     </div>
 
     <div class="container">
-        <nav class="navbar-center">
-            <a href="https://www.instagram.com/usekai_id" target="_blank">
-                <img src="{{ asset('images/usekai.png') }}" alt="USEKAI Logo" class="logo-img" />
-            </a>
-        </nav>
 
         <div class="main-content">
             <a class="hover-zone left-zone" href="https://www.youtube.com/@ReikaValencia_Usekai-ID" target="_blank"></a>
@@ -106,16 +101,16 @@
                 </div>
                 <a href="https://www.youtube.com/@ReikaValencia_Usekai-ID" target="_blank" class="bg-click-link"></a>
             </div>
-
-            <footer class="footer-bar hide-on-hover">
-                <div class="footer-nav">
-                    <button>BLOG</button>
-                    <button>TALENT</button>
-                    <button>ABOUT</button>
-                </div>
-            </footer>
         </div>
     </div>
+    <footer class="footer-bar hide-on-hover">
+        <div class="footer-nav">
+            <button onclick="window.location.href='/'">HOME</button>
+            <button onclick="window.location.href='/blog'">BLOG</button>
+            <button onclick="window.location.href='/talent'">TALENT</button>
+            <button onclick="window.location.href='/about'">ABOUT</button>
+        </div>
+    </footer>
 </body>
 
 </html>

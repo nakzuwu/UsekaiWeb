@@ -95,19 +95,21 @@
 
             <h2 style="font-size: 2.2rem; margin-bottom: 0.5rem;">{!! makeClickableLinks($blog->title) !!}</h2>
             <p style="font-size: 1rem;">{!! makeClickableLinks($blog->content) !!}</p>
+
             @php
                 preg_match_all('/https?\:\/\/[^\s]+/', $blog->content, $matches);
                 $urls = $matches[0] ?? [];
             @endphp
+
             @if (!empty($urls))
-                <div style="margin-top: 1rem;">
+                <div style="margin-top: 1.5rem;">
                     @foreach ($urls as $url)
                         @php
                             $parsed = parse_url($url);
                             $host = $parsed['host'] ?? 'Link';
                             $favicon = 'https://www.google.com/s2/favicons?domain=' . $host . '&sz=64';
 
-                            // Cek apakah YouTube
+                            // YouTube check
                             $youtubeId = null;
                             if (str_contains($host, 'youtube.com')) {
                                 parse_str($parsed['query'] ?? '', $query);
@@ -115,29 +117,37 @@
                             } elseif (str_contains($host, 'youtu.be')) {
                                 $youtubeId = ltrim($parsed['path'] ?? '', '/');
                             }
+
                             $thumbnail = $youtubeId ? "https://img.youtube.com/vi/$youtubeId/hqdefault.jpg" : null;
                         @endphp
 
                         <a href="{{ $url }}" target="_blank" style="text-decoration: none; color: inherit;">
                             <div
-                                style="display: flex; align-items: center; gap: 15px; background: #222; padding: 10px; border-radius: 10px; margin-top: 10px; border: 1px solid #444;">
+                                style="
+                    display: flex;
+                    background-color: #1e1e1e;
+                    border: 1px solid #444;
+                    border-radius: 12px;
+                    overflow: hidden;
+                    margin-bottom: 20px;
+                    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+                    max-width: 700px;
+                ">
                                 @if ($thumbnail)
                                     <img src="{{ $thumbnail }}" alt="youtube thumbnail"
-                                        style="width: 120px; height: auto; border-radius: 5px;">
-                                @else
-                                    <img src="{{ $favicon }}" alt="favicon"
-                                        style="width: 32px; height: 32px; border-radius: 5px;">
+                                        style="width: 40%; height: auto; object-fit: cover;">
                                 @endif
-                                <div>
-                                    <div style="color: #fff; font-weight: bold;">{{ $host }}</div>
-                                    <div style="color: #aaa; font-size: 0.85rem;">{{ $url }}</div>
+                                <div style="padding: 15px; flex: 1;">
+                                    <div style="font-size: 1.2rem; color: #fff; font-weight: bold;">{{ ucfirst($host) }}
+                                    </div>
+                                    <div style="font-size: 0.9rem; color: #aaa; margin-top: 5px; word-break: break-all;">
+                                        {{ $url }}</div>
                                 </div>
                             </div>
                         </a>
                     @endforeach
                 </div>
             @endif
-
 
             <p style="color: #ccc; font-size: 0.9rem; margin-bottom: 1rem;">
                 Ditulis oleh <strong>{{ $blog->admin->username ?? 'Anonim' }}</strong> pada

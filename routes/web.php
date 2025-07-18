@@ -4,8 +4,9 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminAuthController;
 use App\Http\Controllers\AdminProfileController;
 use App\Http\Controllers\AdminDashboardController;
-use App\Http\Controllers\Admin\BlogController;
 use App\Http\Controllers\PublicBlogController;
+use App\Http\Controllers\AboutController;
+use App\Http\Controllers\Admin\BlogController;
 
 Route::get('/', function () {
     return view('home');
@@ -31,12 +32,11 @@ Route::middleware('auth:admin')->prefix('admin')->group(function () {
     Route::post('/profile/username', [AdminProfileController::class, 'updateUsername'])->name('admin.updateUsername');
     Route::post('/profile/password', [AdminProfileController::class, 'updatePassword'])->name('admin.updatePassword');
 });
-
 Route::prefix('admin')->name('admin.')->middleware('auth:admin')->group(function () {
     Route::resource('blog', BlogController::class)->except('show');
 });
-
 Route::get('/blog', [PublicBlogController::class, 'index'])->name('blog.index');
 Route::get('/blog/{id}', [PublicBlogController::class, 'show'])->name('blog.show');
+Route::get('/about', [AboutController::class, 'index'])->name('about');
 
 

@@ -7,6 +7,7 @@
     <title>{{ $title ?? 'Login Page' }}</title>
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
 
     <style>
         body {
@@ -49,9 +50,10 @@
 
     <footer class="footer-bar hide-on-hover">
         <div class="footer-nav">
-            <button>BLOG</button>
-            <button>TALENT</button>
-            <button id="social-toggle">ABOUT</button>
+            <button onclick="window.location.href='/'">HOME</button>
+            <button onclick="window.location.href='/blog'">BLOG</button>
+            <button onclick="window.location.href='/talent'">TALENT</button>
+            <button onclick="window.location.href='/about'">ABOUT</button>
         </div>
     </footer>
 

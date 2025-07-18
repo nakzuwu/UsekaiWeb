@@ -35,8 +35,42 @@
 
                     {{-- Render konten --}}
                     <div class="prose prose-invert max-w-none text-white">
-                        {!! nl2br(e($blog->content)) !!}
+                        @php
+                            $content = e($blog->content);
+                            // Buat URL menjadi klikable
+                            $content = preg_replace(
+                                '/(https?:\/\/[^\s<]+)/i',
+                                '<a href="$1" class="text-blue-400 underline" target="_blank" rel="noopener noreferrer">$1</a>',
+                                $content,
+                            );
+
+                            // Cari link YouTube
+                            preg_match_all(
+                                '/https?:\/\/(?:www\.)?(?:youtube\.com\/watch\?v=|youtu\.be\/)([\w\-]+)/i',
+                                $blog->content,
+                                $matches,
+                            );
+                            $youtubeIds = $matches[1] ?? [];
+                        @endphp
+
+                        {!! nl2br($content) !!}
                     </div>
+
+                    {{-- Preview YouTube --}}
+                    @if (!empty($youtubeIds))
+                        <div class="mt-4 flex flex-wrap gap-4">
+                            @foreach ($youtubeIds as $videoId)
+                                <div class="w-64">
+                                    <a href="https://youtu.be/{{ $videoId }}" target="_blank"
+                                        rel="noopener noreferrer">
+                                        <img src="https://img.youtube.com/vi/{{ $videoId }}/hqdefault.jpg"
+                                            class="w-full rounded mb-2">
+                                    </a>
+                                </div>
+                            @endforeach
+                        </div>
+                    @endif
+
 
                     {{-- Render media --}}
                     @if (!empty($blog->media) && is_array($blog->media))
