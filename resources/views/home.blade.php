@@ -111,39 +111,9 @@
                 <div class="footer-nav">
                     <button>BLOG</button>
                     <button>TALENT</button>
-                    <button id="social-toggle">ABOUT</button>
+                    <button>ABOUT</button>
                 </div>
             </footer>
-
-            <!-- POPUPS -->
-            <div id="overlay" class="overlay hidden"></div>
-
-            <div id="social-popup" class="social-popup hidden">
-                <div class="social-item">
-                    <img src="{{ asset('images/discord.png') }}" alt="Discord" />
-                    <a href="https://discord.gg/UtvmVRYuhM" target="_blank">Discord</a>
-                </div>
-                <div class="social-item">
-                    <img src="{{ asset('images/instagram.png') }}" alt="Instagram" />
-                    <a href="https://www.instagram.com/usekai_id" target="_blank">Instagram</a>
-                </div>
-                <div class="social-item">
-                    <img src="{{ asset('images/twitter.png') }}" alt="Twitter" />
-                    <a href="https://x.com/USekai_Pro" target="_blank">Twitter</a>
-                </div>
-            </div>
-
-            <div id="info-popup" class="info-popup hidden">
-                <p>
-                    <strong><em>COMING SOON -NKZ</em></strong>
-                </p>
-            </div>
-
-            <div id="coming-soon" class="coming-soon hidden">
-                <p>
-                    <strong><em>COMING SOON -NKZ</em></strong>
-                </p>
-            </div>
         </div>
     </div>
 </body>

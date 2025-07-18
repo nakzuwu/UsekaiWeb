@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ $title ?? 'Login Page' }}</title>
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" rel="stylesheet" />
+
     <style>
         body {
             font-family: sans-serif;
@@ -18,7 +20,6 @@
         }
 
         .footer-bar {
-            background-color: #111;
             color: white;
             padding: 10px 20px;
             margin-top: auto;
@@ -54,6 +55,8 @@
         </div>
     </footer>
 
+    <!-- Lightbox JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
 
 </body>
 

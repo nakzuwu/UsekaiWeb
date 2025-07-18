@@ -10,5 +10,10 @@ class Admin extends Authenticatable
     use Notifiable;
 
     protected $fillable = ['username', 'password'];
+    
+    public function blogs()
+    {
+        return $this->hasMany(Blog::class);
+    }
 }
 

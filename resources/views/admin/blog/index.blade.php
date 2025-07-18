@@ -17,7 +17,8 @@
                     <div class="flex justify-between items-start mb-2">
                         <div>
                             <h2 class="text-xl font-semibold text-white">{{ $blog->title }}</h2>
-                            <p class="text-gray-400 text-sm">{{ $blog->posted_at->format('d M Y H:i') }}</p>
+                            <p class="text-gray-400 text-sm">{{ $blog->posted_at ? $blog->posted_at->format('d M Y') : '-' }}
+                            </p>
                         </div>
                         <div class="space-x-2">
                             <a href="{{ route('admin.blog.edit', $blog->id) }}"

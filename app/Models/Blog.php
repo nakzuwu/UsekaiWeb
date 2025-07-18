@@ -10,7 +10,16 @@ class Blog extends Model
     use HasFactory;
 
     protected $fillable = [
-        'title', 'content', 'media', 'admin_id', 'posted_at'
+        'title',
+        'content',
+        'media',
+        'admin_id',
+        'posted_at',
+        'link_url',
+        'link_title',
+        'link_description',
+        'link_image',
+        'link_provider',
     ];
 
     protected $casts = [

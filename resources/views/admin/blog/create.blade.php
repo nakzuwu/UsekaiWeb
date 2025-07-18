@@ -33,8 +33,8 @@
             <!-- Media Upload -->
             <div class="mb-4">
                 <label class="block text-white mb-1">Upload Media (image/video)</label>
-                <input type="file" name="media[]" id="mediaInput" multiple accept="image/*,video/*
-                    class="text-white block w-full bg-[#0A0A0A] border border-[#EF4444] p-2 rounded">
+                <input type="file" name="media[]" id="mediaInput" multiple accept="image/*,video/*"
+                    class="text-white block w-full bg-[#0A0A0A] border border-[#EF4444] p-2 rounded" />
                 <input type="hidden" name="media_order" id="mediaOrder">
             </div>
 

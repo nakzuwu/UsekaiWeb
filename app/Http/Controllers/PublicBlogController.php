@@ -9,12 +9,18 @@ class PublicBlogController extends Controller
 {
     public function index()
     {
-        $blogs = Blog::orderBy('posted_at', 'desc')->paginate(6); // pagination
+        $blogs = Blog::with('admin') // ini penting
+            ->orderBy('posted_at', 'desc')
+            ->paginate(6);
+
         return view('blog.index', compact('blogs'));
     }
 
-    public function show(Blog $blog)
+
+    public function show($id)
     {
+        $blog = Blog::with('admin')->findOrFail($id); 
         return view('blog.show', compact('blog'));
     }
+
 }

@@ -37,4 +37,6 @@ Route::prefix('admin')->name('admin.')->middleware('auth:admin')->group(function
 });
 
 Route::get('/blog', [PublicBlogController::class, 'index'])->name('blog.index');
-Route::get('/blog/{blog}', [PublicBlogController::class, 'show'])->name('blog.show');
+Route::get('/blog/{id}', [PublicBlogController::class, 'show'])->name('blog.show');
+
+
