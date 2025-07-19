@@ -101,16 +101,18 @@
                 </div>
                 <a href="https://www.youtube.com/@ReikaValencia_Usekai-ID" target="_blank" class="bg-click-link"></a>
             </div>
+
+            <footer class="footer-bar hide-on-hover">
+                <div class="footer-nav">
+                    <button onclick="window.location.href='/'">HOME</button>
+                    <button onclick="window.location.href='/blog'">BLOG</button>
+                    <button onclick="window.location.href='/talent'">TALENT</button>
+                    <button onclick="window.location.href='/about'">ABOUT</button>
+
+                </div>
+            </footer>
         </div>
     </div>
-    <footer class="footer-bar hide-on-hover">
-        <div class="footer-nav">
-            <button onclick="window.location.href='/'">HOME</button>
-            <button onclick="window.location.href='/blog'">BLOG</button>
-            <button onclick="window.location.href='/talent'">TALENT</button>
-            <button onclick="window.location.href='/about'">ABOUT</button>
-        </div>
-    </footer>
 </body>
 
 </html>

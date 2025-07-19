@@ -48,14 +48,20 @@
         @yield('content')
     </main>
 
-    <footer class="footer-bar hide-on-hover">
-        <div class="footer-nav">
-            <button onclick="window.location.href='/'">HOME</button>
-            <button onclick="window.location.href='/blog'">BLOG</button>
-            <button onclick="window.location.href='/talent'">TALENT</button>
-            <button onclick="window.location.href='/about'">ABOUT</button>
+    <footer class="footer-bar hide-on-hover pt-6">
+        <div class="flex flex-col items-center gap-2">
+            <div class="footer-nav">
+                <button onclick="window.location.href='/'">HOME</button>
+                <button onclick="window.location.href='/blog'">BLOG</button>
+                <button onclick="window.location.href='/talent'">TALENT</button>
+                <button onclick="window.location.href='/about'">ABOUT</button>
+            </div>
+            <div class="text-center text-sm text-white">
+                © USEKAI 2025
+            </div>
         </div>
     </footer>
+
 
     <!-- Lightbox JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>

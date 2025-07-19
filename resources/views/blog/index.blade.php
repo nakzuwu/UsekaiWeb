@@ -1,140 +1,38 @@
 @extends('layouts.app')
 
 @section('content')
-    <style>
-        /* Sembunyikan scrollbar */
-        ::-webkit-scrollbar {
-            display: none;
-        }
-
-        body {
-            scrollbar-width: none;
-            -ms-overflow-style: none;
-        }
-
-        .media-grid {
-            display: grid;
-            gap: 5px;
-        }
-
-        .media-grid-1 {
-            grid-template-columns: 1fr;
-        }
-
-        .media-grid-2,
-        .media-grid-3 {
-            grid-template-columns: repeat(2, 1fr);
-        }
-
-        .media-grid img {
-            width: 100%;
-            border-radius: 8px;
-            object-fit: cover;
-            height: 200px;
-        }
-
-        .media-overlay {
-            position: relative;
-        }
-
-        .media-overlay::after {
-            content: attr(data-count);
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0, 0, 0, 0.6);
-            color: white;
-            font-size: 2rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 8px;
-        }
-
-        .lihat-detail {
-            margin-top: 10px;
-            display: inline-block;
-            background: #444;
-            color: white;
-            padding: 6px 12px;
-            border-radius: 6px;
-            text-decoration: none;
-            font-size: 0.9rem;
-        }
-
-        .lihat-detail:hover {
-            background: #666;
-        }
-    </style>
-
-    <div
-        style="
-    height: 100vh;
-    overflow: hidden;
-    background: url('{{ asset('images/background.png') }}') center/cover no-repeat, #121212;
-    color: white;
-    padding: 1.5rem;
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-">
+    <div class="h-screen overflow-hidden bg-cover bg-center bg-no-repeat text-white p-6 flex flex-col items-center justify-start"
+        style="background-image: url('{{ asset('images/background.png') }}');">
 
         <!-- Blog Wrapper -->
         <div
-            style="
-        width: 100%;
-        max-width: 800px;
-        height: calc(100vh - 100px);
-        overflow-y: auto;
-        background-color: rgba(18, 18, 18, 0.8);
-        border: 1px solid rgba(255, 255, 255, 0.3);
-        border-radius: 20px;
-        padding: 1.5rem;
-        box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-        backdrop-filter: blur(6px);
-    ">
+            class="w-full max-w-3xl h-[calc(100vh-100px)] overflow-y-auto bg-black/80 scrollbar-hide border border-white/30 rounded-2xl p-6 shadow-lg backdrop-blur-md">
 
             <!-- Logo Usekai -->
-            <div style="text-align: center; margin-bottom: 2rem;">
-                <img src="{{ asset('images/usekai.png') }}" alt="USEKAI" style="height: 80px; margin-bottom: 10px;">
-                <h2 style="margin: 0; color: white; font-size: 1.8rem;">USEKAI Blog</h2>
+            <div class="text-center mb-8">
+                <img src="{{ asset('images/usekai.png') }}" alt="USEKAI" class="h-20 mx-auto mb-2">
+                <h2 class="text-white text-2xl font-bold">USEKAI Blog</h2>
             </div>
 
-
             @forelse ($blogs as $blog)
-                <a href="{{ route('blog.show', $blog->id) }}" style="text-decoration: none; color: inherit;">
-                    <div style="
-            background-color: #1e1e1e;
-            border-radius: 10px;
-            margin-bottom: 1rem;
-            padding: 1rem;
-            box-shadow: 0 0 10px rgba(0,0,0,0.3);
-            transition: transform 0.2s;"
-                        onmouseover="this.style.transform='scale(1.01)'" onmouseout="this.style.transform='scale(1)'">
+                <a href="{{ route('blog.show', $blog->id) }}" class="block text-white no-underline">
+                    <div
+                        class="bg-zinc-900 rounded-lg mb-6 p-4 shadow-md transition-transform duration-200 hover:scale-[1.01]">
 
                         <!-- Judul -->
-                        <h3 style="color: white; margin: 0 0 0.5rem 0; font-size: 2.4em;">
-                            {{ $blog->title }}
-                        </h3>
+                        <h3 class="text-white text-2xl font-bold mb-2">{{ $blog->title }}</h3>
 
                         <!-- Deskripsi -->
-
                         @php
                             $contentWithLinks = preg_replace(
                                 '/(https?\:\/\/[^\s]+)/',
-                                '<a href="$1" target="_blank" style="color: #4faaff; text-decoration: underline;">$1</a>',
+                                '<a href="$1" target="_blank" class="text-sky-400 underline">$1</a>',
                                 e($blog->content),
                             );
                         @endphp
+                        <p class="text-gray-300">{!! nl2br($contentWithLinks) !!}</p>
 
-                        <p style="margin-top: 0.5rem; color: #ccc;">
-                            {!! nl2br($contentWithLinks) !!}
-                        </p>
-
+                        <!-- YouTube Thumbnails -->
                         @php
                             preg_match_all(
                                 '/https?:\/\/(?:www\.)?(?:youtube\.com\/watch\?v=|youtu\.be\/)([a-zA-Z0-9_-]+)/',
@@ -145,76 +43,81 @@
                         @endphp
 
                         @if (!empty($videoIds))
-                            <div style="display: flex; flex-wrap: wrap; gap: 10px; margin-top: 0.5rem;">
+                            <div class="flex flex-wrap gap-3 mt-2">
                                 @foreach ($videoIds as $vid)
-                                    <div
-                                        style="flex: 1 1 300px; background-color: #000; border-radius: 8px; overflow: hidden;">
-                                        <a href="https://www.youtube.com/watch?v={{ $vid }}" target="_blank"
-                                            style="display: block;">
+                                    <div class="flex-1 min-w-[300px] bg-black rounded-lg overflow-hidden">
+                                        <a href="https://www.youtube.com/watch?v={{ $vid }}" target="_blank">
                                             <img src="https://img.youtube.com/vi/{{ $vid }}/0.jpg"
-                                                alt="YouTube Thumbnail" style="width: 100%; object-fit: cover;">
+                                                alt="YouTube Thumbnail" class="w-full object-cover">
                                         </a>
                                     </div>
                                 @endforeach
                             </div>
                         @endif
 
-
                         <!-- Media -->
-                        @if ($blog->media)
-                            <div
-                                style="
-                    display: grid;
-                    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-                    gap: 10px;
-                    margin-top: 0.5rem;">
-                                @foreach ($blog->media as $media)
-                                    @php
-                                        $ext = pathinfo($media, PATHINFO_EXTENSION);
-                                        $isVideo = in_array($ext, ['mp4', 'webm', 'ogg']);
-                                    @endphp
+                        @if ($blog->media && count($blog->media) > 0)
+                            @php
+                                $firstMedia = $blog->media[0];
+                                $restMedia = array_slice($blog->media, 1);
+                                $extFirst = pathinfo($firstMedia, PATHINFO_EXTENSION);
+                                $isVideoFirst = in_array($extFirst, ['mp4', 'webm', 'ogg']);
+                            @endphp
 
-                                    <div
-                                        style="
-                            width: 100%;
-                            border-radius: 8px;
-                            overflow: hidden;
-                            background-color: #000;
-                            display: flex;
-                            align-items: center;
-                            justify-content: center;
-                            max-height: 300px;
-                            position: relative;">
-                                        @if ($isVideo)
-                                            <video controls controlsList="nodownload"
-                                                style="width: 100%; height: 100%; object-fit: cover;"
-                                                oncontextmenu="return false">
-                                                <source src="{{ asset('storage/' . $media) }}"
-                                                    type="video/{{ $ext }}">
-                                                Browser Anda tidak mendukung tag video.
-                                            </video>
-                                        @else
-                                            <img src="{{ asset('storage/' . $media) }}" alt="media"
-                                                style="width: 100%; height: 100%; object-fit: cover;">
-                                        @endif
-                                    </div>
-                                @endforeach
+                            <!-- Media utama (besar, aspect-video) -->
+                            <div class="rounded-lg overflow-hidden bg-black aspect-video mt-3">
+                                @if ($isVideoFirst)
+                                    <video controls controlsList="nodownload" class="w-full h-full object-cover"
+                                        oncontextmenu="return false">
+                                        <source src="{{ asset('storage/' . $firstMedia) }}"
+                                            type="video/{{ $extFirst }}">
+                                        Browser Anda tidak mendukung video.
+                                    </video>
+                                @else
+                                    <img src="{{ asset('storage/' . $firstMedia) }}" alt="media"
+                                        class="w-full h-full object-cover">
+                                @endif
                             </div>
+
+                            <!-- Media lainnya (grid kecil) -->
+                            @if (count($restMedia) > 0)
+                                <div class="grid grid-cols-2 md:grid-cols-3 gap-2 mt-3">
+                                    @foreach ($restMedia as $media)
+                                        @php
+                                            $ext = pathinfo($media, PATHINFO_EXTENSION);
+                                            $isVideo = in_array($ext, ['mp4', 'webm', 'ogg']);
+                                        @endphp
+
+                                        <div class="rounded-lg overflow-hidden bg-black aspect-video">
+                                            @if ($isVideo)
+                                                <video controls controlsList="nodownload" class="w-full h-full object-cover"
+                                                    oncontextmenu="return false">
+                                                    <source src="{{ asset('storage/' . $media) }}"
+                                                        type="video/{{ $ext }}">
+                                                    Browser Anda tidak mendukung video.
+                                                </video>
+                                            @else
+                                                <img src="{{ asset('storage/' . $media) }}" alt="media"
+                                                    class="w-full h-full object-cover">
+                                            @endif
+                                        </div>
+                                    @endforeach
+                                </div>
+                            @endif
                         @endif
 
+
                         <!-- Penulis dan Tanggal -->
-                        <p style="color: #aaa; font-size: 0.9em; margin-top: 0.5rem;">
+                        <p class="text-gray-400 text-sm mt-3">
                             Ditulis oleh <strong>{{ $blog->admin->username ?? 'Anonim' }}</strong>
                             pada {{ \Carbon\Carbon::parse($blog->posted_at)->translatedFormat('d F Y') }}
                         </p>
                     </div>
                 </a>
             @empty
-                <p style="color: white;">Belum ada blog yang tersedia.</p>
+                <p class="text-white">Belum ada blog yang tersedia.</p>
             @endforelse
 
-
         </div>
-
     </div>
 @endsection

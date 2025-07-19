@@ -11,7 +11,7 @@ class PublicBlogController extends Controller
     {
         $blogs = Blog::with('admin') // ini penting
             ->orderBy('posted_at', 'desc')
-            ->paginate(6);
+            ->get();
 
         return view('blog.index', compact('blogs'));
     }

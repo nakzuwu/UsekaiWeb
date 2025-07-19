@@ -134,6 +134,9 @@
             </main>
         </div>
     </div>
+    <div class="text-center text-sm text-gray-300 mt-2">
+        © USEKAI 2025
+    </div>
 </body>
 
 </html>

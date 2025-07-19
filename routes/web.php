@@ -7,6 +7,8 @@ use App\Http\Controllers\AdminDashboardController;
 use App\Http\Controllers\PublicBlogController;
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\Admin\BlogController;
+use App\Http\Controllers\TalentController;
+
 
 Route::get('/', function () {
     return view('home');
@@ -38,5 +40,6 @@ Route::prefix('admin')->name('admin.')->middleware('auth:admin')->group(function
 Route::get('/blog', [PublicBlogController::class, 'index'])->name('blog.index');
 Route::get('/blog/{id}', [PublicBlogController::class, 'show'])->name('blog.show');
 Route::get('/about', [AboutController::class, 'index'])->name('about');
+Route::get('/talent', [TalentController::class, 'index'])->name('talent');
 
 
