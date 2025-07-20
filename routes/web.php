@@ -11,36 +11,57 @@ use App\Http\Controllers\TalentController;
 use App\Http\Controllers\AlsephinaRheaTalentController;
 use App\Http\Controllers\ReikaValenciaTalentController;
 
-Route::get('/', function () {
-    return view('home');
-});
+/*
+|--------------------------------------------------------------------------
+| Public Routes
+|--------------------------------------------------------------------------
+*/
 
-Route::get('/login', [AdminAuthController::class, 'showLoginForm'])->name('login.form');
-Route::post('/login', [AdminAuthController::class, 'login'])->name('login');
-Route::post('/logout', [AdminAuthController::class, 'logout'])->name('logout');
-
-Route::middleware(['auth:admin'])->group(function () {
-    Route::get('/admin/dashboard', function () {
-        return view('admin.dashboard');
-    })->name('admin.dashboard');
-});
-
-Route::middleware('auth:admin')->group(function () {
-    Route::get('/admin/dashboard', [AdminDashboardController::class, 'index'])->name('admin.dashboard');
-    Route::get('/admin/profile', [AdminDashboardController::class, 'profile'])->name('admin.profile');
-});
-
-Route::middleware('auth:admin')->prefix('admin')->group(function () {
-    Route::get('/profile', [AdminProfileController::class, 'show'])->name('admin.profile');
-    Route::post('/profile/username', [AdminProfileController::class, 'updateUsername'])->name('admin.updateUsername');
-    Route::post('/profile/password', [AdminProfileController::class, 'updatePassword'])->name('admin.updatePassword');
-});
-Route::prefix('admin')->name('admin.')->middleware('auth:admin')->group(function () {
-    Route::resource('blog', BlogController::class)->except('show');
-});
+Route::get('/', fn() => view('home'));
 Route::get('/blog', [PublicBlogController::class, 'index'])->name('blog.index');
 Route::get('/blog/{id}', [PublicBlogController::class, 'show'])->name('blog.show');
 Route::get('/about', [AboutController::class, 'index'])->name('about');
-Route::get('/talent', [TalentController::class, 'index'])->name('talent');
-Route::get('/talent/reikavalencia', [ReikaValenciaTalentController::class, 'index'])->name('talent.reikavalencia');
-Route::get('/talent/alsephinarhea', [AlsephinaRheaTalentController::class, 'index'])->name('talent.alsephinarhea');
+
+/*
+|--------------------------------------------------------------------------
+| Auth Routes (prefix: talent)
+|--------------------------------------------------------------------------
+*/
+
+Route::prefix('talent')->group(function () {
+    Route::get('/', [TalentController::class, 'index'])->name('talent');
+    Route::get('/reikavalencia', [ReikaValenciaTalentController::class, 'index'])->name('talent.reikavalencia');
+    Route::get('/alsephinarhea', [AlsephinaRheaTalentController::class, 'index'])->name('talent.alsephinarhea');
+});
+
+/*
+|--------------------------------------------------------------------------
+| Admin Routes (prefix: u53k41-1d)
+|--------------------------------------------------------------------------
+*/
+
+Route::middleware(['auth:admin'])->prefix('u53k41-1d')->name('admin.')->group(function () {
+    
+    // Dashboard
+    Route::get('/dashboard', [AdminDashboardController::class, 'index'])->name('dashboard');
+
+    // Profile
+    Route::get('/profile', [AdminProfileController::class, 'show'])->name('profile');
+    Route::post('/profile/username', [AdminProfileController::class, 'updateUsername'])->name('updateUsername');
+    Route::post('/profile/password', [AdminProfileController::class, 'updatePassword'])->name('updatePassword');
+
+    // Blog Management
+    Route::resource('blog', BlogController::class)->except('show');
+});
+
+/*
+|--------------------------------------------------------------------------
+| Auth Routes (prefix: u53k41-1d)
+|--------------------------------------------------------------------------
+*/
+
+Route::prefix('u53k41-1d')->group(function () {
+    Route::get('/login', [AdminAuthController::class, 'showLoginForm'])->name('login.form');
+    Route::post('/login', [AdminAuthController::class, 'login'])->name('login');
+    Route::post('/logout', [AdminAuthController::class, 'logout'])->name('logout');
+});
