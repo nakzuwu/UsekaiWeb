@@ -1,6 +1,8 @@
 @php use Illuminate\Support\Str; @endphp
 @extends('layouts.admin')
 
+@section('title', 'Blog')
+
 @section('content')
     <div class="p-6 bg-[#0A0A0A] min-h-screen">
         <div class="flex justify-between items-center mb-6">

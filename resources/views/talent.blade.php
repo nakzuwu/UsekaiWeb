@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Talent | USEKAI')
+@section('title', 'Talent')
 
 @section('content')
     <!-- Google Fonts -->

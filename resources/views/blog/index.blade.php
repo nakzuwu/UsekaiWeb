@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('title', 'Blog')
+
 @section('content')
     <div class="h-screen overflow-hidden bg-cover bg-center bg-no-repeat text-white p-6 flex flex-col items-center justify-start"
         style="background-image: url('{{ asset('images/background.png') }}');">

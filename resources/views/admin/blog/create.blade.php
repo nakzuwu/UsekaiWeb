@@ -1,5 +1,7 @@
 @extends('layouts.admin')
 
+@section('title', 'Create Blog')
+
 @section('content')
     <div class="p-6 max-w-3xl mx-auto bg-[#0A0A0A] min-h-screen">
 

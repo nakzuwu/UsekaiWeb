@@ -1,61 +1,31 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# USEKAI ID - VTuber Agency Web Profile
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+**USEKAI ID** adalah website resmi dari sebuah agensi VTuber yang menampilkan profil para talent virtual secara interaktif dan estetik. Situs ini dirancang untuk menjadi representasi digital dari dunia virtual para VTuber dengan menggabungkan elemen visual yang kuat, animasi responsif, serta informasi personal seperti nama panggung, media sosial, dan deskripsi karakter.
 
-## About Laravel
+Website ini dibangun menggunakan framework **Laravel** dan memanfaatkan **Tailwind CSS** untuk tampilan antarmuka yang modern dan fleksibel. Setiap talent memiliki halaman profil khusus yang menampilkan gambar karakter, informasi pribadi, serta latar belakang video interaktif yang muncul saat pengguna melakukan hover.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+### 🎯 Tujuan Website
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+-   Menjadi pusat informasi dan profil resmi para talent USEKAI ID
+-   Menampilkan identitas visual dan branding dari masing-masing karakter
+-   Menghubungkan pengunjung dengan media sosial resmi para talent
+-   Memberikan pengalaman pengguna yang imersif melalui animasi dan interaksi visual
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+### 🖼️ Fitur Utama
 
-## Learning Laravel
+-   Halaman profil per talent dengan animasi dan latar belakang video
+-   Tampilan responsif untuk berbagai perangkat
+-   Efek transisi halus saat hover
+-   Link ke media sosial aktif (Instagram, YouTube, dan lainnya)
+-   Desain estetika modern dengan dominasi warna gelap (dark theme)
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+### 🧩 Teknologi Digunakan
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+-   **Laravel Blade** – Untuk manajemen template dan routing
+-   **Tailwind CSS** – Untuk styling komponen dan layout responsif
+-   **Custom JavaScript** – Untuk efek transisi dan interaksi video
+-   **HTML5 Video** – Digunakan sebagai background interaktif saat hover
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+---
 
-## Laravel Sponsors
-
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
-
-### Premium Partners
-
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+Website ini bukan hanya berfungsi sebagai profil, tetapi juga sebagai bagian dari branding digital USEKAI ID untuk memperkenalkan karakter dan membangun komunitas penggemar di dunia virtual.
