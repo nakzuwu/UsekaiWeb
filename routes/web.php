@@ -8,7 +8,8 @@ use App\Http\Controllers\PublicBlogController;
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\Admin\BlogController;
 use App\Http\Controllers\TalentController;
-
+use App\Http\Controllers\AlsephinaRheaTalentController;
+use App\Http\Controllers\ReikaValenciaTalentController;
 
 Route::get('/', function () {
     return view('home');
@@ -41,5 +42,5 @@ Route::get('/blog', [PublicBlogController::class, 'index'])->name('blog.index');
 Route::get('/blog/{id}', [PublicBlogController::class, 'show'])->name('blog.show');
 Route::get('/about', [AboutController::class, 'index'])->name('about');
 Route::get('/talent', [TalentController::class, 'index'])->name('talent');
-
-
+Route::get('/talent/reikavalencia', [ReikaValenciaTalentController::class, 'index'])->name('talent.reikavalencia');
+Route::get('/talent/alsephinarhea', [AlsephinaRheaTalentController::class, 'index'])->name('talent.alsephinarhea');

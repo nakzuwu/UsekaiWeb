@@ -6,7 +6,7 @@
     <div class="min-h-screen bg-cover bg-center bg-no-repeat text-white"
         style="background-image: url('{{ asset('images/background.png') }}')">
         <div class="flex justify-center items-center min-h-screen px-4">
-            <div class="w-full max-w-4xl bg-black/70 rounded-2xl shadow-lg border-2 border-white p-8 md:p-12 text-center">
+            <div class="w-full max-w-4xl bg-black/70 rounded-2xl shadow-lg  border border-white/20 p-8 md:p-12 text-center">
 
                 {{-- Logo --}}
                 <img src="{{ asset('images/usekai.png') }}" alt="Usekai Logo" class="w-48 mx-auto mb-6" />
