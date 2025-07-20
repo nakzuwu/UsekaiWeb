@@ -41,9 +41,9 @@
                         @foreach ($blog->media as $media)
                             <div class="relative w-32">
                                 @if (Str::endsWith($media, ['.jpg', '.jpeg', '.png', '.gif']))
-                                    <img src="{{ asset('storage/' . $media) }}" class="w-full h-24 object-cover rounded">
+                                    <img src="{{ preg_replace('/^https?:/', '',asset('storage/' . $media)) }}" class="w-full h-24 object-cover rounded">
                                 @elseif(Str::endsWith($media, ['.mp4', '.webm', '.mov']))
-                                    <video src="{{ asset('storage/' . $media) }}" controls
+                                    <video src="{{ preg_replace('/^https?:/', '',asset('storage/' . $media)) }}" controls
                                         class="w-full h-24 rounded"></video>
                                 @endif
                                 {{-- Optionally add delete checkbox --}}

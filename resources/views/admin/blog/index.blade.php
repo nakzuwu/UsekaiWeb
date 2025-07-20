@@ -79,9 +79,11 @@
                         <div class="mt-4 flex flex-wrap gap-4">
                             @foreach ($blog->media as $media)
                                 @if (Str::endsWith($media, ['.jpg', '.jpeg', '.png', '.gif']))
-                                    <img src="{{ asset('storage/' . $media) }}" class="w-40 rounded">
+                                    <img src="{{ preg_replace('/^https?:/', '', asset('storage/' . $media)) }}"
+                                        class="w-40 rounded">
                                 @elseif(Str::endsWith($media, ['.mp4', '.webm', '.mov']))
-                                    <video src="{{ asset('storage/' . $media) }}" controls class="w-64 rounded"></video>
+                                    <video src="{{ preg_replace('/^https?:/', '', asset('storage/' . $media)) }}" controls
+                                        class="w-64 rounded"></video>
                                 @endif
                             @endforeach
                         </div>

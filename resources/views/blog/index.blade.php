@@ -71,7 +71,7 @@
                                 @if ($isVideoFirst)
                                     <video controls controlsList="nodownload" class="w-full h-full object-cover"
                                         oncontextmenu="return false">
-                                        <source src="{{ asset('storage/' . $firstMedia) }}"
+                                        <source src="{{ preg_replace('/^https?:/', '',asset('storage/' . $firstMedia)) }}"
                                             type="video/{{ $extFirst }}">
                                         Browser Anda tidak mendukung video.
                                     </video>
@@ -94,7 +94,7 @@
                                             @if ($isVideo)
                                                 <video controls controlsList="nodownload" class="w-full h-full object-cover"
                                                     oncontextmenu="return false">
-                                                    <source src="{{ asset('storage/' . $media) }}"
+                                                    <source src="{{ preg_replace('/^https?:/', '',asset('storage/' . $media)) }}"
                                                         type="video/{{ $ext }}">
                                                     Browser Anda tidak mendukung video.
                                                 </video>
