@@ -10,16 +10,16 @@
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet" />
 
-    <link rel="icon" href="{{ asset('images/logousekai.png') }}" type="image/png">
+    <link rel="icon" href="{{ preg_replace('/^https?:/', '', asset('images/logousekai.png')) }}" type="image/png">
 
     <!-- Styles -->
-    <link rel="stylesheet" href="{{ asset('/css/style.css') }}">
+    <link rel="stylesheet" href="{{ preg_replace('/^https?:/', '', asset('css/style.css')) }}">
 
     <!-- Preload Video -->
     <link rel="preload" as="video" href="{{ asset('webm/preload.webm') }}" type="video/webm" />
 
     <!-- Scripts -->
-    <script src="{{ asset('js/main.js') }}" defer></script>
+    <script src="{{  preg_replace('/^https?:/', '',asset('js/main.js')) }}" defer></script>
 </head>
 
 <body>

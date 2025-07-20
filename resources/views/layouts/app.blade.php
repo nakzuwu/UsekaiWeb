@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     {{-- Dynamic Title from @section('title') --}}
     <title>@yield('title', 'UsekaiID') | USEKAI ID</title>
-    <link rel="icon" href="{{ asset('images/logousekai.png') }}" type="image/png">
-    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    <link rel="icon" href="{{ preg_replace('/^https?:/', '',asset('images/logousekai.png')) }}" type="image/png">
+    <link rel="stylesheet" href="{{ preg_replace('/^https?:/', '',asset('css/style.css')) }}">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" rel="stylesheet" />
     <script src="https://cdn.tailwindcss.com"></script>
 

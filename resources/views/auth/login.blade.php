@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Login | USEKAI ID</title>
-    <link rel="icon" href="{{ asset('images/logousekai.png') }}" type="image/png">
+    <link rel="icon" href="{{ preg_replace('/^https?:/', '', asset('images/logousekai.png')) }}" type="image/png">
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         @keyframes float {
