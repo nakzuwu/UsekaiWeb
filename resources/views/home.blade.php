@@ -19,7 +19,7 @@
     <link rel="preload" as="video" href="{{ asset('webm/preload.webm') }}" type="video/webm" />
 
     <!-- Scripts -->
-    <script src="{{  preg_replace('/^https?:/', '',asset('js/main.js')) }}" defer></script>
+    <script src="{{ preg_replace('/^https?:/', '', asset('js/main.js')) }}" defer></script>
 </head>
 
 <body>
@@ -32,7 +32,7 @@
     </div>
 
     <div class="container">
-
+        {{ dd(asset('')) }}
         <div class="main-content">
             <a class="hover-zone left-zone" href="https://www.youtube.com/@ReikaValencia_Usekai-ID" target="_blank"></a>
             <a class="hover-zone right-zone" href="https://www.youtube.com/@AlsephinaRhea" target="_blank"></a>

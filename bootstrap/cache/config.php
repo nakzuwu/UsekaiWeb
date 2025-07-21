@@ -7,9 +7,9 @@
   'app' => 
   array (
     'name' => 'Laravel',
-    'env' => 'production',
+    'env' => 'local',
     'debug' => true,
-    'url' => 'localhost',
+    'url' => 'http://localhost',
     'frontend_url' => 'http://localhost:3000',
     'asset_url' => NULL,
     'timezone' => 'UTC',
@@ -351,7 +351,7 @@
       array (
         'driver' => 'local',
         'root' => 'G:\\project laravel\\usekai\\storage\\app/public',
-        'url' => 'localhost/storage',
+        'url' => 'http://localhost/storage',
         'visibility' => 'public',
         'throw' => false,
         'report' => false,
@@ -488,7 +488,7 @@
         'username' => NULL,
         'password' => NULL,
         'timeout' => NULL,
-        'local_domain' => NULL,
+        'local_domain' => 'localhost',
       ),
       'ses' => 
       array (
