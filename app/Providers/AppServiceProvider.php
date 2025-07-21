@@ -4,7 +4,8 @@ namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Request;
-use App\Models\VisitorLog; 
+use App\Models\VisitorLog;
+use Illuminate\Support\Facades\URL;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -21,6 +22,9 @@ class AppServiceProvider extends ServiceProvider
      */
    public function boot()
     {
+        if (config('app.env') === 'production') {
+            URL::forceScheme('https');
+        }
         // Jangan log saat di dashboard admin atau URL mengandung '/admin'
         if (
             app()->runningInConsole() === false &&
