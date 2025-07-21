@@ -65,3 +65,11 @@ Route::prefix('u53k41-1d')->group(function () {
     Route::post('/login', [AdminAuthController::class, 'login'])->name('login');
     Route::post('/logout', [AdminAuthController::class, 'logout'])->name('logout');
 });
+
+/*
+|--------------------------------------------------------------------------
+| feeds for blog in discord
+|--------------------------------------------------------------------------
+*/
+
+Route::feeds();

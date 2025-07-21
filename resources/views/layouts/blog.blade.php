@@ -4,6 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:title" content="{{ $blog->title }}" />
+    <meta property="og:description" content="{{ Str::limit(strip_tags($blog->content), 150) }}" />
+    <meta property="og:url" content="{{ url()->current() }}" />
+    <meta property="og:type" content="article" />
+    <meta property="og:image" content="{{ url('storage/' . $blog->media[0]) }}" />
     {{-- Dynamic Title from @section('title') --}}
     <title>@yield('title', 'UsekaiID') | USEKAI ID</title>
     <link rel="icon" href="{{ preg_replace('/^https?:/', '', asset('images/logousekai.png')) }}" type="image/png">

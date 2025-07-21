@@ -41,4 +41,11 @@
       0 => 'Termwind\\Laravel\\TermwindServiceProvider',
     ),
   ),
+  'spatie/laravel-feed' => 
+  array (
+    'providers' => 
+    array (
+      0 => 'Spatie\\Feed\\FeedServiceProvider',
+    ),
+  ),
 );

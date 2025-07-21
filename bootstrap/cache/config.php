@@ -9,7 +9,7 @@
     'name' => 'Laravel',
     'env' => 'production',
     'debug' => true,
-    'url' => 'https://usekai-production.up.railway.app',
+    'url' => 'http://localhost',
     'frontend_url' => 'http://localhost:3000',
     'asset_url' => NULL,
     'timezone' => 'UTC',
@@ -224,7 +224,7 @@
       array (
         'driver' => 'sqlite',
         'url' => NULL,
-        'database' => 'railway',
+        'database' => 'usekai',
         'prefix' => '',
         'foreign_key_constraints' => true,
         'busy_timeout' => NULL,
@@ -235,11 +235,11 @@
       array (
         'driver' => 'mysql',
         'url' => NULL,
-        'host' => 'mysql.railway.internal',
+        'host' => '127.0.0.1',
         'port' => '3306',
-        'database' => 'railway',
+        'database' => 'usekai',
         'username' => 'root',
-        'password' => 'adyNwtkCISAXBwUfXDSNQtHVvfxLfvxp',
+        'password' => '',
         'unix_socket' => '',
         'charset' => 'utf8mb4',
         'collation' => 'utf8mb4_unicode_ci',
@@ -255,11 +255,11 @@
       array (
         'driver' => 'mariadb',
         'url' => NULL,
-        'host' => 'mysql.railway.internal',
+        'host' => '127.0.0.1',
         'port' => '3306',
-        'database' => 'railway',
+        'database' => 'usekai',
         'username' => 'root',
-        'password' => 'adyNwtkCISAXBwUfXDSNQtHVvfxLfvxp',
+        'password' => '',
         'unix_socket' => '',
         'charset' => 'utf8mb4',
         'collation' => 'utf8mb4_unicode_ci',
@@ -275,11 +275,11 @@
       array (
         'driver' => 'pgsql',
         'url' => NULL,
-        'host' => 'mysql.railway.internal',
+        'host' => '127.0.0.1',
         'port' => '3306',
-        'database' => 'railway',
+        'database' => 'usekai',
         'username' => 'root',
-        'password' => 'adyNwtkCISAXBwUfXDSNQtHVvfxLfvxp',
+        'password' => '',
         'charset' => 'utf8',
         'prefix' => '',
         'prefix_indexes' => true,
@@ -290,11 +290,11 @@
       array (
         'driver' => 'sqlsrv',
         'url' => NULL,
-        'host' => 'mysql.railway.internal',
+        'host' => '127.0.0.1',
         'port' => '3306',
-        'database' => 'railway',
+        'database' => 'usekai',
         'username' => 'root',
-        'password' => 'adyNwtkCISAXBwUfXDSNQtHVvfxLfvxp',
+        'password' => '',
         'charset' => 'utf8',
         'prefix' => '',
         'prefix_indexes' => true,
@@ -334,6 +334,29 @@
       ),
     ),
   ),
+  'feed' => 
+  array (
+    'feeds' => 
+    array (
+      'main' => 
+      array (
+        'items' => 
+        array (
+          0 => 'App\\Models\\Blog',
+          1 => 'getFeedItems',
+        ),
+        'url' => '/feed',
+        'title' => 'Blog Feed',
+        'description' => 'Kumpulan artikel terbaru dari blog.',
+        'language' => 'id-ID',
+        'image' => '',
+        'format' => 'atom',
+        'view' => 'feed::atom',
+        'type' => '',
+        'contentType' => '',
+      ),
+    ),
+  ),
   'filesystems' => 
   array (
     'default' => 'local',
@@ -351,7 +374,7 @@
       array (
         'driver' => 'local',
         'root' => 'G:\\project laravel\\usekai\\storage\\app/public',
-        'url' => 'https://usekai-production.up.railway.app/storage',
+        'url' => 'http://localhost/storage',
         'visibility' => 'public',
         'throw' => false,
         'report' => false,
@@ -488,7 +511,7 @@
         'username' => NULL,
         'password' => NULL,
         'timeout' => NULL,
-        'local_domain' => 'usekai-production.up.railway.app',
+        'local_domain' => 'localhost',
       ),
       'ses' => 
       array (
@@ -540,7 +563,7 @@
     'from' => 
     array (
       'address' => 'hello@example.com',
-      'name' => '${APP_NAME}',
+      'name' => 'Laravel',
     ),
     'markdown' => 
     array (

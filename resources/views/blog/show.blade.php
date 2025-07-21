@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.blog')
 
 @section('title', 'Blog')
 
@@ -169,11 +169,12 @@
                             @if ($isVideo)
                                 <video controls controlsList="nodownload" oncontextmenu="return false"
                                     style="display: block; max-width: 100%; height: auto; border-radius: 8px;">
-                                    <source src="{{ preg_replace('/^https?:/', '',asset('storage/' . $media)) }}" type="video/{{ $ext }}">
+                                    <source src="{{ preg_replace('/^https?:/', '', asset('storage/' . $media)) }}"
+                                        type="video/{{ $ext }}">
                                     Browser Anda tidak mendukung tag video.
                                 </video>
                             @else
-                                <img src="{{ preg_replace('/^https?:/', '',asset('storage/' . $media)) }}" alt="media"
+                                <img src="{{ preg_replace('/^https?:/', '', asset('storage/' . $media)) }}" alt="media"
                                     style="display: block; cursor: zoom-in; border-radius: 8px; max-width: 100%; height: auto;" />
                             @endif
                         </div>
