@@ -7,7 +7,7 @@
   'app' => 
   array (
     'name' => 'Laravel',
-    'env' => 'local',
+    'env' => 'production',
     'debug' => true,
     'url' => 'http://localhost',
     'frontend_url' => 'http://localhost:3000',
