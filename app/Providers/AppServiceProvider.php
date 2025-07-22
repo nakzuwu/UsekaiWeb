@@ -27,9 +27,9 @@ class AppServiceProvider extends ServiceProvider
 
         // Menampilkan environment
         return dd($env);
-        if (config('app.env') === 'production') {
-            URL::forceScheme('https');
-        }
+        // if (config('app.env') === 'production') {
+        //     URL::forceScheme('https');
+        // }
         // Jangan log saat di dashboard admin atau URL mengandung '/admin'
         // if (
         //     app()->runningInConsole() === false &&
