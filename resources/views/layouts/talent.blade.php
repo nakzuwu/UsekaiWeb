@@ -40,6 +40,37 @@
             font-size: 14px;
             cursor: pointer;
         }
+
+        .footer-bar {
+            color: white;
+            padding: 10px 20px;
+            left: 0;
+            right: 0;
+            z-index: 50;
+            position: fixed;
+            bottom: -30px;
+            /* Awalnya tersembunyi */
+            transition: bottom 0.5s ease;
+        }
+
+        .footer-bar.show-on-load {
+            bottom: 0;
+            /* Muncul ke atas */
+        }
+
+        .footer-hover-zone {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 30px;
+            z-index: 40;
+        }
+
+        .footer-hover-zone:hover+.footer-bar,
+        .footer-bar:hover {
+            bottom: 0;
+        }
     </style>
 
 </head>
@@ -69,6 +100,20 @@
 
     <!-- Lightbox JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const footerBar = document.querySelector(".footer-bar");
+
+            // Tambahkan class untuk memunculkan navbar
+            footerBar.classList.add("show-on-load");
+
+            // Setelah 2 detik, kembalikan ke posisi semula (hide)
+            setTimeout(() => {
+                footerBar.classList.remove("show-on-load");
+            }, 2000);
+        });
+    </script>
+
 </body>
 
 </html>

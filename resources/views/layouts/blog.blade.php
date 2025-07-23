@@ -45,16 +45,43 @@
             font-size: 14px;
             cursor: pointer;
         }
+
+        .footer-bar {
+            position: fixed;
+            bottom: -30px;
+            /* Sembunyikan di luar layar */
+            left: 0;
+            right: 0;
+            transition: bottom 0.3s ease;
+            z-index: 50;
+        }
+
+        .footer-hover-zone {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 30px;
+            z-index: 40;
+        }
+
+        .footer-hover-zone:hover+.footer-bar,
+        .footer-bar:hover {
+            bottom: 0;
+        }
     </style>
 </head>
 
 <body>
-
     <main>
         @yield('content')
     </main>
 
-    <footer class="footer-bar hide-on-hover pt-6">
+    <!-- Hover Zone -->
+    <div class="footer-hover-zone"></div>
+
+    <!-- Footer bar yang auto-hide -->
+    <footer class="footer-bar pt-6">
         <div class="flex flex-col items-center gap-2">
             <div class="footer-nav">
                 <button onclick="window.location.href='/'">HOME</button>
@@ -68,10 +95,9 @@
         </div>
     </footer>
 
-
     <!-- Lightbox JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
-
 </body>
+
 
 </html>

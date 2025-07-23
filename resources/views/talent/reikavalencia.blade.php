@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.talent')
 
 @section('title', 'Reika Valencia | USEKAI')
 
@@ -26,12 +26,13 @@
 
 
 
-    <div class="relative z-10 min-h-screen flex flex-col justify-center pt-80 px-6  pb-12 text-white space-y-20">
+    <div class="relative z-10 min-h-screen flex flex-col justify-center pt-64 px-6 pb-12 text-white space-y-14">
 
         <!-- Top Grid Info -->
         <div class="grid grid-cols-1 md:grid-cols-2 w-full max-w-6xl mx-auto text-white font-[Poppins]">
             <!-- Left Side -->
             <div class="animate-fade-in-up text-left space-y-8">
+                <!-- Birthday -->
                 <div>
                     <h3
                         class="text-xl font-bold bg-gradient-to-r from-pink-500 to-yellow-400 bg-clip-text text-transparent drop-shadow">
@@ -39,12 +40,65 @@
                     </h3>
                     <p
                         class="mt-2 text-lg tracking-wide hover:translate-x-1 transition-transform duration-300 drop-shadow-lg">
-                        12 Desember
+                        23 Desember
                     </p>
                 </div>
+
+                <!-- Age -->
+                <div>
+                    <h3
+                        class="text-xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent drop-shadow">
+                        🎈 Age
+                    </h3>
+                    <p
+                        class="mt-2 text-lg tracking-wide hover:translate-x-1 transition-transform duration-300 drop-shadow-lg">
+                        18 years old
+                    </p>
+                </div>
+
+                <!-- Height -->
                 <div>
                     <h3
                         class="text-xl font-bold bg-gradient-to-r from-green-400 to-teal-300 bg-clip-text text-transparent drop-shadow">
+                        📏 Height
+                    </h3>
+                    <p
+                        class="mt-2 text-lg tracking-wide hover:translate-x-1 transition-transform duration-300 drop-shadow-lg">
+                        152 cm
+                    </p>
+                </div>
+            </div>
+
+            <!-- Right Side -->
+            <div class="animate-fade-in-up text-right space-y-8 mt-12 md:mt-0">
+                <!-- Mama / Papa -->
+                <div>
+                    <h3
+                        class="text-xl font-bold bg-gradient-to-r from-yellow-400 to-pink-400 bg-clip-text text-transparent drop-shadow">
+                        🧬 Mama / Papa
+                    </h3>
+                    <p
+                        class="mt-2 text-lg tracking-wide hover:translate-x-1 transition-transform duration-300 drop-shadow-lg">
+                        Sakana / Eliron Veradis
+                    </p>
+                </div>
+
+                <!-- Description -->
+                <div>
+                    <h3
+                        class="text-xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent drop-shadow">
+                        📝 Deskripsi
+                    </h3>
+                    <p
+                        class="mt-2 text-lg tracking-wide italic hover:scale-105 transition-transform duration-300 drop-shadow-lg">
+                        Pro Apex dan Prosekai. Putri Tomat.
+                    </p>
+                </div>
+
+                <!-- Fan Name -->
+                <div>
+                    <h3
+                        class="text-xl font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent drop-shadow">
                         👥 Fan Name
                     </h3>
                     <p
@@ -53,65 +107,57 @@
                     </p>
                 </div>
             </div>
-
-            <!-- Right Side -->
-            <div class="animate-fade-in-up text-right space-y-8 mt-12 md:mt-0">
-                <div>
-                    <h3
-                        class="text-xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent drop-shadow">
-                        Deskripsi 📝
-                    </h3>
-                    <p
-                        class="mt-2 text-lg tracking-wide italic hover:scale-105 transition-transform duration-300 drop-shadow-lg">
-                        Pro Apex dan Prosekai. Putri Tomat.
-                    </p>
-                </div>
-                <div>
-                    <h3
-                        class="text-xl font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent drop-shadow">
-                        Sifat ✨
-                    </h3>
-                    <ul class="list-disc list-inside mt-2 space-y-1 text-lg tracking-wide drop-shadow-lg">
-                        <li class="hover:text-pink-300 transition-colors">Introvert</li>
-                        <li class="hover:text-pink-300 transition-colors">-1 Topik</li>
-                        <li class="hover:text-pink-300 transition-colors">Tomat</li>
-                    </ul>
-                </div>
-            </div>
         </div>
-        <!-- Social Links -->
-        <div class="mt-10">
-            <h2 class="text-2xl font-semibold mb-6"></h2>
 
-            <div class="flex justify-center gap-10 text-white">
-                {{-- Instagram --}}
+        <!-- Tag Section -->
+        <div class="mt-6 text-center text-white font-[Poppins] space-y-2">
+            <h3
+                class="text-xl font-bold bg-gradient-to-r from-fuchsia-500 to-cyan-400 bg-clip-text text-transparent drop-shadow">
+                📌 Tags
+            </h3>
+            <ul class="mt-2 flex flex-wrap justify-center gap-4 text-lg tracking-wide drop-shadow-lg">
+                <li class="flex items-center gap-1">
+                    <span class="font-semibold text-pink-300">General :</span> <span>#reikadairy</span>
+                </li>
+                <li class="flex items-center gap-1">
+                    <span class="font-semibold text-green-300">Live tag :</span> <span>#Valenci_live</span>
+                </li>
+                <li class="flex items-center gap-1">
+                    <span class="font-semibold text-purple-300">Fanart :</span> <span>#sihireika</span>
+                </li>
+                <li class="flex items-center gap-1">
+                    <span class="font-semibold text-blue-300">Clip :</span> <span>#katalisreika</span>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Social Links -->
+        <div class="mt-4 text-white font-[Poppins]">
+            <h2 class="text-2xl font-semibold text-center mb-4">🔗 Social Links</h2>
+
+            <div class="flex justify-center gap-8">
+                <!-- Instagram -->
                 <a href="https://www.instagram.com/reika_valencia" target="_blank"
                     class="flex flex-col items-center w-32 text-center group hover:underline">
                     <img src="{{ asset('images/instagram.png') }}" alt="Instagram"
                         class="w-6 transition-transform duration-300 group-hover:scale-110" />
-                    <span class="font-bold text-white visited:text-white text-sm mt-1">
-                        @reika_valencia
-                    </span>
+                    <span class="font-bold text-sm mt-1">@reika_valencia</span>
                 </a>
 
-                {{-- YouTube --}}
+                <!-- YouTube -->
                 <a href="https://www.youtube.com/@ReikaValencia_Usekai-ID" target="_blank"
                     class="flex flex-col items-center w-32 text-center group hover:underline">
                     <img src="{{ asset('images/youtube.png') }}" alt="YouTube"
                         class="w-6 transition-transform duration-300 group-hover:scale-110" />
-                    <span class="font-bold text-white visited:text-white text-sm mt-1">
-                        Reika Valencia「U-Sekai ID」
-                    </span>
+                    <span class="font-bold text-sm mt-1">Reika Valencia「U-Sekai ID」</span>
                 </a>
 
-                {{-- Twitter --}}
+                <!-- Twitter -->
                 <a href="https://x.com/ReikaValencia" target="_blank"
                     class="flex flex-col items-center w-32 text-center group hover:underline">
                     <img src="{{ asset('images/twitter.png') }}" alt="Twitter"
                         class="w-6 transition-transform duration-300 group-hover:scale-110" />
-                    <span class="font-bold text-white visited:text-white text-sm mt-1">
-                        @ReikaValencia
-                    </span>
+                    <span class="font-bold text-sm mt-1">@ReikaValencia</span>
                 </a>
             </div>
         </div>

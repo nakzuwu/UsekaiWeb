@@ -73,7 +73,3 @@ Route::prefix('u53k41-1d')->group(function () {
 */
 
 Route::feeds();
-
-Route::get('/tes', function () {
-    dd('Ini adalah tes dd dari route /tes');
-});

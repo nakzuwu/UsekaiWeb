@@ -7,7 +7,7 @@
   'app' => 
   array (
     'name' => 'Laravel',
-    'env' => 'production',
+    'env' => 'development',
     'debug' => true,
     'url' => 'http://localhost',
     'frontend_url' => 'http://localhost:3000',
@@ -224,7 +224,7 @@
       array (
         'driver' => 'sqlite',
         'url' => NULL,
-        'database' => 'railway',
+        'database' => 'usekai',
         'prefix' => '',
         'foreign_key_constraints' => true,
         'busy_timeout' => NULL,
@@ -235,11 +235,11 @@
       array (
         'driver' => 'mysql',
         'url' => NULL,
-        'host' => 'crossover.proxy.rlwy.net:46372',
+        'host' => '127.0.0.1',
         'port' => '3306',
-        'database' => 'railway',
+        'database' => 'usekai',
         'username' => 'root',
-        'password' => 'aSyXIHAAkGiMLhsKIaqdiKnxvCOVEWAK',
+        'password' => '',
         'unix_socket' => '',
         'charset' => 'utf8mb4',
         'collation' => 'utf8mb4_unicode_ci',
@@ -255,11 +255,11 @@
       array (
         'driver' => 'mariadb',
         'url' => NULL,
-        'host' => 'crossover.proxy.rlwy.net:46372',
+        'host' => '127.0.0.1',
         'port' => '3306',
-        'database' => 'railway',
+        'database' => 'usekai',
         'username' => 'root',
-        'password' => 'aSyXIHAAkGiMLhsKIaqdiKnxvCOVEWAK',
+        'password' => '',
         'unix_socket' => '',
         'charset' => 'utf8mb4',
         'collation' => 'utf8mb4_unicode_ci',
@@ -275,11 +275,11 @@
       array (
         'driver' => 'pgsql',
         'url' => NULL,
-        'host' => 'crossover.proxy.rlwy.net:46372',
+        'host' => '127.0.0.1',
         'port' => '3306',
-        'database' => 'railway',
+        'database' => 'usekai',
         'username' => 'root',
-        'password' => 'aSyXIHAAkGiMLhsKIaqdiKnxvCOVEWAK',
+        'password' => '',
         'charset' => 'utf8',
         'prefix' => '',
         'prefix_indexes' => true,
@@ -290,11 +290,11 @@
       array (
         'driver' => 'sqlsrv',
         'url' => NULL,
-        'host' => 'crossover.proxy.rlwy.net:46372',
+        'host' => '127.0.0.1',
         'port' => '3306',
-        'database' => 'railway',
+        'database' => 'usekai',
         'username' => 'root',
-        'password' => 'aSyXIHAAkGiMLhsKIaqdiKnxvCOVEWAK',
+        'password' => '',
         'charset' => 'utf8',
         'prefix' => '',
         'prefix_indexes' => true,
@@ -563,7 +563,7 @@
     'from' => 
     array (
       'address' => 'hello@example.com',
-      'name' => '${APP_NAME}',
+      'name' => 'Laravel',
     ),
     'markdown' => 
     array (
