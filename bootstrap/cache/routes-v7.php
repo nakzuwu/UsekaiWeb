@@ -13,7 +13,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::5cuamCcvpv1x5EM5',
+            '_route' => 'generated::v2DwpN70JKgxmZ5F',
           ),
           1 => NULL,
           2 => 
@@ -33,7 +33,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::ez3RhOwtfYumkQ6n',
+            '_route' => 'generated::2eqqoJzWbtw6v4xO',
           ),
           1 => NULL,
           2 => 
@@ -281,6 +281,42 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
+      '/u53k41-1d/send-embed' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'admin.discord.embed.create',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+        1 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'admin.discord.embed.store',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'POST' => 0,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
       '/u53k41-1d/login' => 
       array (
         0 => 
@@ -359,7 +395,7 @@ app('router')->setCompiledRoutes(
     ),
     2 => 
     array (
-      0 => '{^(?|/blog/([^/]++)(*:21)|/u53k41\\-1d/blog/([^/]++)(?|/edit(*:61)|(*:68))|/storage/(.*)(*:89))/?$}sDu',
+      0 => '{^(?|/blog/([^/]++)(*:21)|/u53k41\\-1d/(?|blog/([^/]++)(?|/edit(*:64)|(*:71))|get\\-channels/([^/]++)(*:101))|/storage/(.*)(*:123))/?$}sDu',
     ),
     3 => 
     array (
@@ -386,7 +422,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      61 => 
+      64 => 
       array (
         0 => 
         array (
@@ -409,7 +445,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      68 => 
+      71 => 
       array (
         0 => 
         array (
@@ -451,7 +487,30 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      89 => 
+      101 => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'admin.admin.discord.getChannels',
+          ),
+          1 => 
+          array (
+            0 => 'serverId',
+          ),
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => true,
+          6 => NULL,
+        ),
+      ),
+      123 => 
       array (
         0 => 
         array (
@@ -489,7 +548,7 @@ app('router')->setCompiledRoutes(
   ),
   'attributes' => 
   array (
-    'generated::5cuamCcvpv1x5EM5' => 
+    'generated::v2DwpN70JKgxmZ5F' => 
     array (
       'methods' => 
       array (
@@ -518,7 +577,7 @@ app('router')->setCompiledRoutes(
                         \'exception\' => $exception,
                     ]), status: $exception ? 500 : 200);
                 }";s:5:"scope";s:54:"Illuminate\\Foundation\\Configuration\\ApplicationBuilder";s:4:"this";N;s:4:"self";s:32:"00000000000004b80000000000000000";}}',
-        'as' => 'generated::5cuamCcvpv1x5EM5',
+        'as' => 'generated::v2DwpN70JKgxmZ5F',
       ),
       'fallback' => false,
       'defaults' => 
@@ -534,7 +593,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::ez3RhOwtfYumkQ6n' => 
+    'generated::2eqqoJzWbtw6v4xO' => 
     array (
       'methods' => 
       array (
@@ -554,7 +613,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::ez3RhOwtfYumkQ6n',
+        'as' => 'generated::2eqqoJzWbtw6v4xO',
       ),
       'fallback' => false,
       'defaults' => 
@@ -1148,6 +1207,119 @@ app('router')->setCompiledRoutes(
         'as' => 'admin.blog.destroy',
         'uses' => 'App\\Http\\Controllers\\Admin\\BlogController@destroy',
         'controller' => 'App\\Http\\Controllers\\Admin\\BlogController@destroy',
+        'namespace' => NULL,
+        'prefix' => '/u53k41-1d',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'admin.discord.embed.create' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'u53k41-1d/send-embed',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth:admin',
+        ),
+        'uses' => 'App\\Http\\Controllers\\Admin\\DiscordEmbedController@create',
+        'controller' => 'App\\Http\\Controllers\\Admin\\DiscordEmbedController@create',
+        'as' => 'admin.discord.embed.create',
+        'namespace' => NULL,
+        'prefix' => '/u53k41-1d',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'admin.discord.embed.store' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'POST',
+      ),
+      'uri' => 'u53k41-1d/send-embed',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth:admin',
+        ),
+        'uses' => 'App\\Http\\Controllers\\Admin\\DiscordEmbedController@store',
+        'controller' => 'App\\Http\\Controllers\\Admin\\DiscordEmbedController@store',
+        'as' => 'admin.discord.embed.store',
+        'namespace' => NULL,
+        'prefix' => '/u53k41-1d',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'admin.admin.discord.getChannels' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'u53k41-1d/get-channels/{serverId}',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth:admin',
+        ),
+        'uses' => 'App\\Http\\Controllers\\Admin\\DiscordEmbedController@getChannels',
+        'controller' => 'App\\Http\\Controllers\\Admin\\DiscordEmbedController@getChannels',
+        'as' => 'admin.admin.discord.getChannels',
         'namespace' => NULL,
         'prefix' => '/u53k41-1d',
         'where' => 

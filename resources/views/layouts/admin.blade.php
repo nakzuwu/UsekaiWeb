@@ -87,6 +87,11 @@
                         {{ request()->routeIs('admin.blog.index') ? 'bg-primary' : 'border border-primary hover:bg-gray-800' }}">
                         📝 Blog
                     </a>
+                    <a href="{{ route('admin.discord.embed.create') }}"
+                        class="block px-4 py-2 rounded text-center text-white
+                        {{ request()->routeIs('admin.discord.embed.create') ? 'bg-primary' : 'border border-primary hover:bg-gray-800' }}">
+                        📝 Discord Embed
+                    </a>
                 </nav>
             </div>
         </div>

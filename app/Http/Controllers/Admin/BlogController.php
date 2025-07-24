@@ -29,31 +29,31 @@ class BlogController extends Controller
 
 
     public function store(Request $request)
-{
-    $validated = $request->validate([
-        'title' => 'required|string|max:255',
-        'content' => 'required|string',
-        'media.*' => 'nullable|file|mimes:jpeg,jpg,png,gif,mp4,webm,mov|max:20480',
-    ]);
+    {
+        $validated = $request->validate([
+            'title' => 'required|string|max:255',
+            'content' => 'required|string',
+            'media.*' => 'nullable|file|mimes:jpeg,jpg,png,gif,mp4,webm,mov|max:20480',
+        ]);
 
-    $mediaPaths = [];
+        $mediaPaths = [];
 
-    if ($request->hasFile('media')) {
-        foreach ($request->file('media') as $file) {
-            $mediaPaths[] = $file->store('uploads', 'public');
+        if ($request->hasFile('media')) {
+            foreach ($request->file('media') as $file) {
+                $mediaPaths[] = $file->store('uploads', 'public');
+            }
         }
+
+        Blog::create([
+            'title' => $request->title,
+            'content' => $request->content,
+            'media' => $mediaPaths,
+            'admin_id' => auth('admin')->id(),
+            'posted_at' => now(),
+        ]);
+
+        return redirect()->route('admin.blog.index')->with('success', 'Post created successfully.');
     }
-
-    Blog::create([
-        'title' => $request->title,
-        'content' => $request->content,
-        'media' => $mediaPaths,
-        'admin_id' => auth('admin')->id(),
-        'posted_at' => now(),
-    ]);
-
-    return redirect()->route('admin.blog.index')->with('success', 'Post created successfully.');
-}
 
     public function edit(Blog $blog)
     {

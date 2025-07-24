@@ -7,6 +7,7 @@ use App\Http\Controllers\AdminDashboardController;
 use App\Http\Controllers\PublicBlogController;
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\Admin\BlogController;
+use App\Http\Controllers\Admin\DiscordEmbedController;
 use App\Http\Controllers\TalentController;
 use App\Http\Controllers\AlsephinaRheaTalentController;
 use App\Http\Controllers\ReikaValenciaTalentController;
@@ -52,6 +53,12 @@ Route::middleware(['auth:admin'])->prefix('u53k41-1d')->name('admin.')->group(fu
 
     // Blog Management
     Route::resource('blog', BlogController::class)->except('show');
+
+    // Kirim Embed ke Discord
+    Route::get('/send-embed', [DiscordEmbedController::class, 'create'])->name('discord.embed.create');
+    Route::post('/send-embed', [DiscordEmbedController::class, 'store'])->name('discord.embed.store');
+    Route::get('/get-channels/{serverId}', [DiscordEmbedController::class, 'getChannels'])->name('admin.discord.getChannels');
+
 });
 
 /*
