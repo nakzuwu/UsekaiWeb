@@ -5,7 +5,7 @@
 @section('content')
 
     <div
-        style="min-height: 100vh; background: url('{{ asset('images/background.png') }}') center/cover no-repeat fixed, #121212; padding-top: 5rem; padding-bottom: 5rem; overflow-x: hidden; display: flex; flex-direction: column; align-items: center; color: white;">
+        style="min-height: 100vh; background: url('{{ asset('images/background-web.png') }}') center/cover no-repeat fixed, #121212; padding-top: 5rem; padding-bottom: 5rem; overflow-x: hidden; display: flex; flex-direction: column; align-items: center; color: white;">
 
         <div
             style="width: 100%; max-width: 800px; background-color: rgba(18, 18, 18, 0.8); border: 1px solid rgba(255, 255, 255, 0.3); border-radius: 20px; padding: 2rem; box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); backdrop-filter: blur(6px);">

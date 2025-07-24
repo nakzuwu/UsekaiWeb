@@ -34,7 +34,7 @@ class AppServiceProvider extends ServiceProvider
         if (
             app()->runningInConsole() === false &&
             !Request::is('api/*') &&
-            !str_contains(Request::path(), 'admin')
+            !str_contains(Request::path(), 'u53k41-1d')
         ) {
             VisitorLog::create([
                 'ip_address' => Request::ip(),

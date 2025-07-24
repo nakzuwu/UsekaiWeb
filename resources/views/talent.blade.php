@@ -46,7 +46,7 @@
 
     <!-- Background Blur -->
     <div class="absolute inset-0 z-0">
-        <img src="{{ asset('images/background.png') }}" class="w-full h-full object-cover" alt="bg">
+        <img src="{{ asset('images/background-web.png') }}" class="w-full h-full object-cover" alt="bg">
     </div>
     <div class="justify-center px-4 py-20">
 

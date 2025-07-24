@@ -32,6 +32,7 @@
     </div>
 
     <div class="container">
+
         <div class="main-content">
             <a class="hover-zone left-zone" href="https://www.youtube.com/@ReikaValencia_Usekai-ID" target="_blank"></a>
             <a class="hover-zone right-zone" href="https://www.youtube.com/@AlsephinaRhea" target="_blank"></a>
@@ -112,6 +113,8 @@
             </footer>
         </div>
     </div>
+    <canvas id="particle-canvas"></canvas>
+
 </body>
 
 </html>

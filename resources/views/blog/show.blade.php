@@ -91,7 +91,7 @@
     @endphp
 
     <div
-        style="min-height: 100vh; overflow-x: hidden; background: url('{{ asset('images/background.png') }}') center/cover no-repeat, #121212; color: white; padding: 1.5rem; display: flex; flex-direction: column; align-items: center;">
+        style="min-height: 100vh; overflow-x: hidden; background: url('{{ asset('images/background-web.png') }}') center/cover no-repeat, #121212; color: white; padding: 1.5rem; display: flex; flex-direction: column; align-items: center;">
         <div
             style="width: 100%; max-width: 800px; background-color: rgba(18, 18, 18, 0.8); border: 1px solid rgba(255, 255, 255, 0.3); border-radius: 20px; padding: 1.5rem; box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); backdrop-filter: blur(6px);">
 

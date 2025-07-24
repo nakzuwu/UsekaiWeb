@@ -4,7 +4,7 @@
 
 @section('content')
     <div class="h-screen overflow-hidden bg-cover bg-center bg-no-repeat text-white p-6 flex flex-col items-center justify-start"
-        style="background-image: url('{{ asset('images/background.png') }}');">
+        style="background-image: url('{{ asset('images/background-web.png') }}');">
 
         <!-- Blog Wrapper -->
         <div
@@ -71,7 +71,7 @@
                                 @if ($isVideoFirst)
                                     <video controls controlsList="nodownload" class="w-full h-full object-cover"
                                         oncontextmenu="return false">
-                                        <source src="{{ preg_replace('/^https?:/', '',asset('storage/' . $firstMedia)) }}"
+                                        <source src="{{ preg_replace('/^https?:/', '', asset('storage/' . $firstMedia)) }}"
                                             type="video/{{ $extFirst }}">
                                         Browser Anda tidak mendukung video.
                                     </video>
@@ -94,7 +94,8 @@
                                             @if ($isVideo)
                                                 <video controls controlsList="nodownload" class="w-full h-full object-cover"
                                                     oncontextmenu="return false">
-                                                    <source src="{{ preg_replace('/^https?:/', '',asset('storage/' . $media)) }}"
+                                                    <source
+                                                        src="{{ preg_replace('/^https?:/', '', asset('storage/' . $media)) }}"
                                                         type="video/{{ $ext }}">
                                                     Browser Anda tidak mendukung video.
                                                 </video>
