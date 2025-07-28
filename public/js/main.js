@@ -61,61 +61,57 @@ setTimeout(() => {
 
 const canvas = document.getElementById("particle-canvas");
 const ctx = canvas.getContext("2d");
-let particles = [];
 
-function resizeCanvas() {
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+window.addEventListener("resize", () => {
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
+});
+
+const particles = [];
+const particleCount = 50; // lebih sedikit
+
+function createParticle(fromLeft = true) {
+    const y = Math.random() * canvas.height;
+    const x = fromLeft ? 0 : canvas.width;
+    const speed = 1 + Math.random() * 1.5;
+    const size = 1 + Math.random() * 1.5; // lebih tipis
+    const direction = fromLeft ? 1 : -1;
+
+    particles.push({ x, y, size, speed, direction });
 }
 
-window.addEventListener("resize", resizeCanvas);
-resizeCanvas();
-
-class Particle {
-    constructor(side) {
-        this.x = side === "left" ? 0 : canvas.width;
-        this.y = Math.random() * canvas.height;
-        this.size = Math.random() * 2 + 1;
-        this.speedX =
-            side === "left"
-                ? Math.random() * 1 + 0.5
-                : -(Math.random() * 1 + 0.5);
-        this.speedY = Math.random() * 0.5 - 0.25;
-        this.opacity = Math.random() * 0.5 + 0.2;
-    }
-
-    update() {
-        this.x += this.speedX;
-        this.y += this.speedY;
-    }
-
-    draw() {
-        ctx.beginPath();
-        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(255, 255, 255, ${this.opacity})`;
-        ctx.fill();
-    }
-}
-
-function createParticles() {
-    for (let i = 0; i < 2; i++) {
-        particles.push(new Particle("left"));
-        particles.push(new Particle("right"));
-    }
-}
-
-function animateParticles() {
+function updateParticles() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-    particles.forEach((p, i) => {
-        p.update();
-        p.draw();
-        // Remove if out of bounds
-        if (p.x < -10 || p.x > canvas.width + 10) {
+    for (let i = particles.length - 1; i >= 0; i--) {
+        const p = particles[i];
+        p.x += p.speed * p.direction;
+
+        // Opacity fades as it reaches center
+        const centerX = canvas.width / 2;
+        const distToCenter = Math.abs(centerX - p.x);
+        const maxDist = centerX;
+        const alpha = Math.max(0, distToCenter / maxDist);
+
+        ctx.beginPath();
+        ctx.fillStyle = `rgba(255, 255, 255, ${alpha})`;
+        ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+        ctx.fill();
+
+        // Remove particle if near center
+        if (distToCenter < 30) {
             particles.splice(i, 1);
         }
-    });
-    createParticles();
-    requestAnimationFrame(animateParticles);
+    }
+
+    // Randomly add new particles
+    if (particles.length < particleCount) {
+        createParticle(Math.random() < 0.5);
+    }
+
+    requestAnimationFrame(updateParticles);
 }
 
-animateParticles();
+updateParticles();
