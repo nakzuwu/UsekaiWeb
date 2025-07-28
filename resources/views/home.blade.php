@@ -4,25 +4,22 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
     <title>Home | USEKAI</title>
-
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet" />
-
     <link rel="icon" href="{{ preg_replace('/^https?:/', '', asset('images/logousekai.png')) }}" type="image/png">
-
     <!-- Styles -->
     <link rel="stylesheet" href="{{ preg_replace('/^https?:/', '', asset('css/style.css')) }}">
-
     <!-- Preload Video -->
     <link rel="preload" as="video" href="{{ asset('webm/preload.webm') }}" type="video/webm" />
-
     <!-- Scripts -->
     <script src="{{ preg_replace('/^https?:/', '', asset('js/main.js')) }}" defer></script>
 </head>
 
 <body>
+    <!-- Logo USEKAI di kiri atas -->
+    <img src="{{ asset('images/usekai.png') }}" alt="USEKAI Logo" id="usekai-logo" />
+
     <!-- PRELOAD VIDEO SCREEN -->
     <div id="preloader">
         <video id="preload-video" autoplay muted playsinline>
@@ -30,24 +27,18 @@
             Your browser does not support the video tag.
         </video>
     </div>
-
     <div class="container">
-
         <div class="main-content">
             <a class="hover-zone left-zone" href="https://www.youtube.com/@ReikaValencia_Usekai-ID" target="_blank"></a>
             <a class="hover-zone right-zone" href="https://www.youtube.com/@AlsephinaRhea" target="_blank"></a>
-
             <div class="center-logo hide-on-hover">
-                <div class="center-text">
-                    <h1><strong>USEKAI ID</strong></h1>
-                    <p>Transforming Ideas Into Limitless Possibilities</p>
-                </div>
+                <img src="{{ preg_replace('/^https?:/', '', asset('images/UsekaiText.png')) }}" alt="USEKAI Text"
+                    class="usekai-text-img" />
             </div>
-
             <!-- RHEA -->
             <div class="character-screen rhea-screen">
                 <video autoplay muted loop playsinline class="bg-video">
-                    <source src="{{ asset('webm/rhea.webm') }}" type="video/webm" />
+                    <source src="{{ preg_replace('/^https?:/', '', asset('webm/rhea.webm')) }}" type="video/webm" />
                 </video>
                 <div class="info">
                     <p class="name">Alsephina</p>
@@ -72,7 +63,6 @@
                 </div>
                 <a href="https://www.youtube.com/@AlsephinaRhea" target="_blank" class="bg-click-link"></a>
             </div>
-
             <!-- REIKA -->
             <div class="character-screen reika-screen">
                 <video autoplay muted loop playsinline class="bg-video">
@@ -101,20 +91,17 @@
                 </div>
                 <a href="https://www.youtube.com/@ReikaValencia_Usekai-ID" target="_blank" class="bg-click-link"></a>
             </div>
-
             <footer class="footer-bar hide-on-hover">
                 <div class="footer-nav">
                     <button onclick="window.location.href='/'">HOME</button>
                     <button onclick="window.location.href='/blog'">BLOG</button>
                     <button onclick="window.location.href='/talent'">TALENT</button>
                     <button onclick="window.location.href='/about'">ABOUT</button>
-
                 </div>
             </footer>
         </div>
     </div>
     <canvas id="particle-canvas"></canvas>
-
 </body>
 
 </html>
