@@ -24,9 +24,19 @@
         </div>
     </div>
 
+    <!-- Fixed Top-Left Logo -->
+    <div class="fixed top-4 left-20 z-30 pointer-events-none select-none">
+        <img src="{{ asset('images/rhea_logo.png') }}" alt="Rhea Logo"
+            class="w-32 sm:w-36 md:w-40 lg:w-44
+                object-contain
+                pointer-events-none
+                select-none
+                brightness-100
+                contrast-100
+                transition duration-300 ease-in-out" />
+    </div>
 
-
-    <div class="relative z-10 min-h-screen flex flex-col justify-center pt-80 px-6  pb-12 text-white space-y-20">
+    <div class="relative z-10 min-h-screen flex flex-col justify-center pt-64 px-6 pb-12 text-white space-y-14">
 
         <!-- Top Grid Info -->
         <div class="grid grid-cols-1 md:grid-cols-2 w-full max-w-6xl mx-auto text-white font-[Poppins]">
@@ -109,7 +119,7 @@
             </div>
         </div>
 
-        {{-- <!-- Tag Section -->
+        <!-- Tag Section -->
         <div class="mt-6 text-center text-white font-[Poppins] space-y-2">
             <h3
                 class="text-xl font-bold bg-gradient-to-r from-fuchsia-500 to-cyan-400 bg-clip-text text-transparent drop-shadow">
@@ -129,7 +139,7 @@
                     <span class="font-semibold text-blue-300">Clip :</span> <span>#katalisreika</span>
                 </li>
             </ul>
-        </div> --}}
+        </div>
 
         <!-- Social Links -->
         <div class="mt-4 text-white font-[Poppins]">

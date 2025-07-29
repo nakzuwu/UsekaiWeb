@@ -7,7 +7,7 @@
   'app' => 
   array (
     'name' => 'Laravel',
-    'env' => 'production',
+    'env' => 'development',
     'debug' => true,
     'url' => 'http://localhost',
     'frontend_url' => 'http://localhost:3000',
@@ -168,8 +168,8 @@
       'file' => 
       array (
         'driver' => 'file',
-        'path' => '/var/home/nkzw/Project/UsekaiWeb/storage/framework/cache/data',
-        'lock_path' => '/var/home/nkzw/Project/UsekaiWeb/storage/framework/cache/data',
+        'path' => 'G:\\project laravel\\usekai\\storage\\framework/cache/data',
+        'lock_path' => 'G:\\project laravel\\usekai\\storage\\framework/cache/data',
       ),
       'memcached' => 
       array (
@@ -365,7 +365,7 @@
       'local' => 
       array (
         'driver' => 'local',
-        'root' => '/var/home/nkzw/Project/UsekaiWeb/storage/app/private',
+        'root' => 'G:\\project laravel\\usekai\\storage\\app/private',
         'serve' => true,
         'throw' => false,
         'report' => false,
@@ -373,7 +373,7 @@
       'public' => 
       array (
         'driver' => 'local',
-        'root' => '/var/home/nkzw/Project/UsekaiWeb/storage/app/public',
+        'root' => 'G:\\project laravel\\usekai\\storage\\app/public',
         'url' => 'http://localhost/storage',
         'visibility' => 'public',
         'throw' => false,
@@ -395,7 +395,7 @@
     ),
     'links' => 
     array (
-      '/var/home/nkzw/Project/UsekaiWeb/public/storage' => '/var/home/nkzw/Project/UsekaiWeb/storage/app/public',
+      'G:\\project laravel\\usekai\\public\\storage' => 'G:\\project laravel\\usekai\\storage\\app/public',
     ),
   ),
   'logging' => 
@@ -420,14 +420,14 @@
       'single' => 
       array (
         'driver' => 'single',
-        'path' => '/var/home/nkzw/Project/UsekaiWeb/storage/logs/laravel.log',
+        'path' => 'G:\\project laravel\\usekai\\storage\\logs/laravel.log',
         'level' => 'debug',
         'replace_placeholders' => true,
       ),
       'daily' => 
       array (
         'driver' => 'daily',
-        'path' => '/var/home/nkzw/Project/UsekaiWeb/storage/logs/laravel.log',
+        'path' => 'G:\\project laravel\\usekai\\storage\\logs/laravel.log',
         'level' => 'debug',
         'days' => 14,
         'replace_placeholders' => true,
@@ -492,7 +492,7 @@
       ),
       'emergency' => 
       array (
-        'path' => '/var/home/nkzw/Project/UsekaiWeb/storage/logs/laravel.log',
+        'path' => 'G:\\project laravel\\usekai\\storage\\logs/laravel.log',
       ),
     ),
   ),
@@ -570,7 +570,7 @@
       'theme' => 'default',
       'paths' => 
       array (
-        0 => '/var/home/nkzw/Project/UsekaiWeb/resources/views/vendor/mail',
+        0 => 'G:\\project laravel\\usekai\\resources\\views/vendor/mail',
       ),
     ),
   ),
@@ -665,7 +665,7 @@
     'lifetime' => 120,
     'expire_on_close' => false,
     'encrypt' => false,
-    'files' => '/var/home/nkzw/Project/UsekaiWeb/storage/framework/sessions',
+    'files' => 'G:\\project laravel\\usekai\\storage\\framework/sessions',
     'connection' => NULL,
     'table' => 'sessions',
     'store' => NULL,
@@ -792,9 +792,9 @@
   array (
     'paths' => 
     array (
-      0 => '/var/home/nkzw/Project/UsekaiWeb/resources/views',
+      0 => 'G:\\project laravel\\usekai\\resources\\views',
     ),
-    'compiled' => '/var/home/nkzw/Project/UsekaiWeb/storage/framework/views',
+    'compiled' => 'G:\\project laravel\\usekai\\storage\\framework\\views',
   ),
   'tinker' => 
   array (

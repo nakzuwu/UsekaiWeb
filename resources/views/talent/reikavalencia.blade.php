@@ -24,6 +24,17 @@
         </div>
     </div>
 
+    <!-- Fixed Top-Left Logo -->
+    <div class="fixed top-4 left-20 z-30 pointer-events-none select-none">
+        <img src="{{ asset('images/reika_logo.png') }}" alt="Reika Logo"
+            class="w-32 sm:w-36 md:w-40 lg:w-44
+                object-contain
+                pointer-events-none
+                select-none
+                brightness-100
+                contrast-100
+                transition duration-300 ease-in-out" />
+    </div>
 
 
     <div class="relative z-10 min-h-screen flex flex-col justify-center pt-64 px-6 pb-12 text-white space-y-14">

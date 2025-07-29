@@ -55,8 +55,9 @@
             class="relative z-10 max-w-5xl mx-auto px-4 py-10 border border-white/20 rounded-xl bg-black/40 backdrop-blur-md space-y-10 ">
             <div class="flex flex-col items-center space-y-10">
                 <!-- Logo -->
-                <img src="{{ asset('images/usekai.png') }}" class="h-10" alt="USEKAI Logo">
-
+                <div class="text-center">
+                    <img src="{{ asset('images/usekai.png') }}" alt="USEKAI" class="h-20 mx-auto">
+                </div>
                 <!-- ALSEPHINA RHEA -->
                 <a href="{{ route('talent.alsephinarhea') }}"
                     class="relative w-full flex flex-col sm:flex-row items-center sm:items-center bg-black/80 text-white rounded-xl px-4 sm:px-10 pt-24 pb-12 border border-white/30 hover:scale-105 transition duration-300 overflow-visible mt-12 group">

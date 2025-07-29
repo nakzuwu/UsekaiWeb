@@ -41,86 +41,34 @@
             <div class="mt-12">
                 <h2 class="text-white text-center text-2xl font-bold mb-6">Tim Kami</h2>
 
-                <div class="flex flex-wrap justify-center gap-6">
-                    <div
-                        class="bg-white/10 rounded-xl p-6 w-full max-w-xs text-white text-center border border-white/20 shadow-lg">
-                        <img src="{{ asset('images/logousekai.png') }}" alt="Foto Admin"
-                            class="w-32 h-32 rounded-full mx-auto mb-4 object-cover border-2 border-white/30">
-                        <h3 class="text-xl font-bold">Reina</h3>
-                        <p class="text-sm text-white/80">Founder</p>
-                    </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 justify-items-center">
+                    @php
+                        $team = [
+                            ['name' => 'Reina', 'role' => 'Founder'],
+                            ['name' => 'Itou Ezo', 'role' => 'Staff'],
+                            ['name' => 'Luki Lokananta', 'role' => 'Staff'],
+                            ['name' => 'Sakana', 'role' => 'Staff'],
+                            ['name' => 'Ratt', 'role' => 'Staff'],
+                            ['name' => 'Major', 'role' => 'Staff'],
+                            ['name' => 'Artemis', 'role' => 'Staff'],
+                            ['name' => 'M-san', 'role' => 'Staff'],
+                            ['name' => 'Dendy', 'role' => 'Staff'],
+                            ['name' => 'nakzuwu', 'role' => 'Web Dev', 'image' => 'nakzuwu.png'],
+                        ];
+                    @endphp
 
-                    <div
-                        class="bg-white/10 rounded-xl p-6 w-full max-w-xs text-white text-center border border-white/20 shadow-lg">
-                        <img src="{{ asset('images/logousekai.png') }}" alt="Foto Admin"
-                            class="w-32 h-32 rounded-full mx-auto mb-4 object-cover border-2 border-white/30">
-                        <h3 class="text-xl font-bold">Itou Ezo</h3>
-                        <p class="text-sm text-white/80">Staff</p>
-                    </div>
+                    @foreach ($team as $member)
+                        <div
+                            class="bg-white/10 rounded-xl p-6 w-full max-w-xs text-white text-center border border-white/20 shadow-lg">
+                            <h3 class="text-xl font-bold mb-2">{{ $member['name'] }}</h3>
 
-                    <div
-                        class="bg-white/10 rounded-xl p-6 w-full max-w-xs text-white text-center border border-white/20 shadow-lg">
-                        <img src="{{ asset('images/logousekai.png') }}" alt="Foto Admin"
-                            class="w-32 h-32 rounded-full mx-auto mb-4 object-cover border-2 border-white/30">
-                        <h3 class="text-xl font-bold">Luki Lokananta</h3>
-                        <p class="text-sm text-white/80">Staff</p>
-                    </div>
+                            <img src="{{ asset('images/' . ($member['image'] ?? 'logousekai.png')) }}"
+                                alt="Foto {{ $member['name'] }}"
+                                class="w-32 h-32 rounded-lg mx-auto mb-4 object-cover border-2 border-white/30">
 
-                    <div
-                        class="bg-white/10 rounded-xl p-6 w-full max-w-xs text-white text-center border border-white/20 shadow-lg">
-                        <img src="{{ asset('images/logousekai.png') }}" alt="Foto Admin"
-                            class="w-32 h-32 rounded-full mx-auto mb-4 object-cover border-2 border-white/30">
-                        <h3 class="text-xl font-bold">Sakana</h3>
-                        <p class="text-sm text-white/80">Staff</p>
-                    </div>
-
-                    <div
-                        class="bg-white/10 rounded-xl p-6 w-full max-w-xs text-white text-center border border-white/20 shadow-lg">
-                        <img src="{{ asset('images/logousekai.png') }}" alt="Foto Admin"
-                            class="w-32 h-32 rounded-full mx-auto mb-4 object-cover border-2 border-white/30">
-                        <h3 class="text-xl font-bold">Ratt</h3>
-                        <p class="text-sm text-white/80">Staff</p>
-                    </div>
-
-                    <div
-                        class="bg-white/10 rounded-xl p-6 w-full max-w-xs text-white text-center border border-white/20 shadow-lg">
-                        <img src="{{ asset('images/logousekai.png') }}" alt="Foto Admin"
-                            class="w-32 h-32 rounded-full mx-auto mb-4 object-cover border-2 border-white/30">
-                        <h3 class="text-xl font-bold">Major</h3>
-                        <p class="text-sm text-white/80">Staff</p>
-                    </div>
-
-                    <div
-                        class="bg-white/10 rounded-xl p-6 w-full max-w-xs text-white text-center border border-white/20 shadow-lg">
-                        <img src="{{ asset('images/logousekai.png') }}" alt="Foto Admin"
-                            class="w-32 h-32 rounded-full mx-auto mb-4 object-cover border-2 border-white/30">
-                        <h3 class="text-xl font-bold">Artemis</h3>
-                        <p class="text-sm text-white/80">Staff</p>
-                    </div>
-
-                    <div
-                        class="bg-white/10 rounded-xl p-6 w-full max-w-xs text-white text-center border border-white/20 shadow-lg">
-                        <img src="{{ asset('images/logousekai.png') }}" alt="Foto Admin"
-                            class="w-32 h-32 rounded-full mx-auto mb-4 object-cover border-2 border-white/30">
-                        <h3 class="text-xl font-bold">M-san</h3>
-                        <p class="text-sm text-white/80">Staff</p>
-                    </div>
-
-                    <div
-                        class="bg-white/10 rounded-xl p-6 w-full max-w-xs text-white text-center border border-white/20 shadow-lg">
-                        <img src="{{ asset('images/logousekai.png') }}" alt="Foto Admin"
-                            class="w-32 h-32 rounded-full mx-auto mb-4 object-cover border-2 border-white/30">
-                        <h3 class="text-xl font-bold">Dendy</h3>
-                        <p class="text-sm text-white/80">Staff</p>
-                    </div>
-
-                    <div
-                        class="bg-white/10 rounded-xl p-6 w-full max-w-xs text-white text-center border border-white/20 shadow-lg">
-                        <img src="{{ asset('images/nakzuwu.png') }}" alt="Foto Admin"
-                            class="w-32 h-32 rounded-full mx-auto mb-4 object-cover border-2 border-white/30">
-                        <h3 class="text-xl font-bold">nakzuwu</h3>
-                        <p class="text-sm text-white/80">Web Dev</p>
-                    </div>
+                            <p class="text-sm text-white/80">{{ $member['role'] }}</p>
+                        </div>
+                    @endforeach
                 </div>
             </div>
 
